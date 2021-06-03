@@ -1,0 +1,5 @@
+
+  user_blacklist:
+    - 'FakeUser_01'
+    - 'BlockedUser_02'
+    - 'InvalidUser_03'
