@@ -1,7 +1,7 @@
 from exception.rock_exception import ParameterError, UserNotAllowed
-from controller.impl.server.GetTimezoneImpl import GetTimezoneImpl
+from controller.impl.GetTimezoneImpl import GetTimezoneImpl
 from controller.impl.server.get_server_time_impl import GetServerTimeImpl
-from flask import Flask, Blueprint, request, make_response, g
+from flask import Flask, request, make_response
 from util.config_reader import get_config
 
 
