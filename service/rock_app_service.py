@@ -11,7 +11,7 @@ user_blacklist = get_config().get('user_blacklist')
 
 @app.route('/')
 def index_page():
-    return 'Rock实训'
+    return 'Rock实训 Flask Ver.'
 
 
 @app.route('/time/server/get/', methods=['GET'])
