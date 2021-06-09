@@ -6,8 +6,8 @@ from util.config_reader import get_config
 
 
 app = Flask(__name__)
-
 user_blacklist = get_config().get('user_blacklist')
+
 
 @app.route('/')
 def index_page():
