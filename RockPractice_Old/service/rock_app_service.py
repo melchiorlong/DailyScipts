@@ -1,8 +1,8 @@
-from exception.rock_exception import ParameterError, UserNotAllowed
-from controller.impl.GetTimezoneImpl import GetTimezoneImpl
-from controller.impl.server.get_server_time_impl import GetServerTimeImpl
+from RockPractice_Old.exception import ParameterError, UserNotAllowed
+from RockPractice_Old.controller import GetTimezoneImpl
+from RockPractice_Old.controller.impl.server import GetServerTimeImpl
 from flask import Flask, request, make_response
-from util.config_reader import get_config
+from RockPractice_Old.util.config_reader import get_config
 
 
 app = Flask(__name__)

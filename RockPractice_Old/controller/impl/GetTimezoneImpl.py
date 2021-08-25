@@ -1,4 +1,4 @@
-from controller.time.get_timezone import GetTimezone
+from RockPractice_Old.controller.time.get_timezone import GetTimezone
 from datetime import datetime, timezone, timedelta
 
 
