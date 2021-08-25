@@ -31,6 +31,18 @@ class applovin_reward_video_calc:
 
         return country_map
 
+    def get_log_table(self):
+        table_map = {'dohko_gp': 'spectrum.fact_pain_dohko_log',
+                     'saori_gp': 'spectrum.fact_pain_saori_log',
+                     'aiolos_gp': 'puzzle_log',
+                     'aiolos_ip': 'puzzle_log',
+                     'saori_ip': 'spectrum.fact_pain_saori_log',
+                     'dohko_ip': 'spectrum.fact_pain_dohko_log',
+                     'saga_gp': 'saga_log',
+                     }
+
+        return table_map
+
     def get_sum_dnu_map(self, app_name, db_session):
         sql_statement = """
             select 
@@ -70,9 +82,9 @@ class applovin_reward_video_calc:
                 (
 
                       date_range varchar(64),
-                        app_name varchar(32),
+                       app_name varchar(32),
                        country varchar(32),
-                       impr_type int,
+                       complete_type int,
                        c int
                 );
         """
@@ -108,65 +120,67 @@ class applovin_reward_video_calc:
             db_session.commit()
 
     def run_query(self, db_session):
-        for i in range(0, (self._date_end - self._date_start).days + 1, self._date_step):
-            day = self._date_start + timedelta(days=i)
-            day_head_str = day.strftime('%Y-%m-%d')
-            day_tail = day + timedelta(days=self._date_step)
-            day_tail_str = day_tail.strftime('%Y-%m-%d')
-
-            query_sql = """
-                insert into temp_count_info
-                with psd_ins as (
-                    select info.muid,
-                           info.country,
-                           trunc(info.ins_time),
-                           info.app_name,
-                           count(1) as impr_type
-                    from spectrum.fact_ivt_poseidon_log log
-                             inner join temp_install_info info
-                                        on info.muid = log.muid
-
-                                            and trunc(info.ins_time) >= '{date_head_str}'
-                                            and trunc(info.ins_time) < '{date_tail_str}'
-                                            and trunc(log_time) >= '{date_head_str}'
-                                            and trunc(log_time) <= '{date_tail_str}'
-                                            and action_type = 'impression'
-                                            and ad_format in ('interstitial', 'rewardedvideo')
-                    where 1 = 1
-                      and log.action_time <= dateadd(day, 1, info.ins_time)
-                    group by info.muid,
-                             info.country,
-                             trunc(info.ins_time),
-                             info.app_name)
-                select 
-                        '{date_range}' as date_range,
-                       log.app_name,
-                       log.country,
-                       log.impr_type,
-                       count(log.muid)                                                                                 
-                from psd_ins log
-                group by log.country,
-                         log.impr_type,
-                         log.app_name
-                order by log.country,
-                         log.impr_type;
-                """.format(
-                date_head_str=day_head_str,
-                date_tail_str=day_tail_str,
-                date_range=f'{day_head_str}_{day_tail_str}',
-            )
-            logger.info("查询开始！", f'{day_head_str}_{day_tail_str}')
-            db_session.execute(query_sql)
+        app_table = self.get_log_table()
+        for app_name in self._app_list:
+            for i in range(0, (self._date_end - self._date_start).days + 1, self._date_step):
+                day = self._date_start + timedelta(days=i)
+                day_head_str = day.strftime('%Y-%m-%d')
+                day_tail = day + timedelta(days=self._date_step)
+                day_tail_str = day_tail.strftime('%Y-%m-%d')
+    
+                query_sql = """
+                    insert into temp_count_info
+                    with psd_ins as (
+                        select info.muid,
+                               info.country,
+                               trunc(info.ins_time),
+                               info.app_name,
+                               count(1) as complete_type
+                        from {app_table} log
+                                 inner join temp_install_info info
+                                            on info.muid = log.muid
+                                                and trunc(info.ins_time) >= '{date_head_str}'
+                                                and trunc(info.ins_time) < '{date_tail_str}'
+                                                and trunc(log_time) >= '{date_head_str}'
+                                                and trunc(log_time) <= '{date_tail_str}'
+                                                and action_type = 2
+                        where 1 = 1
+                          and log.action_time <= dateadd(day, 1, info.ins_time)
+                        group by info.muid,
+                                 info.country,
+                                 trunc(info.ins_time),
+                                 info.app_name)
+                    select 
+                            '{date_range}' as date_range,
+                           log.app_name,
+                           log.country,
+                           log.complete_type,
+                           count(log.muid)                                                                                 
+                    from psd_ins log
+                    group by log.country,
+                             log.complete_type,
+                             log.app_name
+                    order by log.country,
+                             log.complete_type;
+                    """.format(
+                    date_head_str=day_head_str,
+                    date_tail_str=day_tail_str,
+                    date_range=f'{day_head_str}_{day_tail_str}',
+                    app_table=app_table.get(app_name)
+                )
+                logger.info("查询开始！", f'{day_head_str}_{day_tail_str}')
+                db_session.execute(query_sql)
+            
         logger.info("最终查询开始！")
         rs = db_session.execute("""
             select
-                app_name, country, impr_type,
+                app_name, country, complete_type,
                 sum(c) as muid_count,
-                sum(muid_count) over (partition by app_name, country order by impr_type rows between current row and unbounded following) as sum_count
+                sum(muid_count) over (partition by app_name, country order by complete_type rows between current row and unbounded following) as sum_count
             from
                 temp_count_info
             group by
-                app_name, country, impr_type
+                app_name, country, complete_type
         """).fetchall()
         logger.info("最终查询结束！")
         return rs
