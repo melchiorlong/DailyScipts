@@ -1,17 +1,17 @@
 from exception.rock_exception import ParameterError, UserNotAllowed
-from controller.impl.server.GetTimezoneImpl import GetTimezoneImpl
+from controller.impl.GetTimezoneImpl import GetTimezoneImpl
 from controller.impl.server.get_server_time_impl import GetServerTimeImpl
-from flask import Flask, Blueprint, request, make_response, g
+from flask import Flask, request, make_response
 from util.config_reader import get_config
 
 
 app = Flask(__name__)
-
 user_blacklist = get_config().get('user_blacklist')
+
 
 @app.route('/')
 def index_page():
-    return 'Rock实训'
+    return 'Rock实训 Flask Ver.'
 
 
 @app.route('/time/server/get/', methods=['GET'])
