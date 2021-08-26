@@ -116,6 +116,9 @@ class RetentionCalc:
                          from install_info info
                                   inner join psd_log log
                                              on log.muid = info.muid
+                         where 1 = 1
+                            and day_dimension >= 0
+                            and day_dimension <= 37
                      ),
                      ins_kch_log as (
                          select info.muid,
@@ -124,6 +127,9 @@ class RetentionCalc:
                          from install_info info
                                   inner join kch_log log
                                              on log.muid = info.muid
+                         where 1 = 1
+                            and day_dimension >= 0
+                            and day_dimension <= 37
                      )
                 select case when iklog.muid is not null then iklog.muid else iplog.muid end                            as muid,
                        case when iklog.install_date is not null then iklog.install_date else iplog.install_date end    as install_date,
