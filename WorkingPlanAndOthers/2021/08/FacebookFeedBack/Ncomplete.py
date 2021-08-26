@@ -8,10 +8,9 @@ logger = log.get_logger('RewardVideo')
 
 class applovin_reward_video_calc:
     _app_list = ['saori_gp', 'dohko_gp', 'aiolos_gp', 'saori_ip', 'dohko_ip', 'aiolos_ip', 'saga_gp']
-    # _app_list = ['aiolos_gp']
-    _date_start = date(2021, 7, 20)
-    _date_end = date(2021, 7, 21)
-    _date_step = 1
+    _date_start = date(2021, 7, 23)
+    _date_end = date(2021, 8, 23)
+    _date_step = 4
 
     def db_conn(self):
         engine_PROD = create_engine('postgres://gv_developer:AjFtinLDMQ0w7i0f@3.230.194.153:5200/db_redshift_gv')
@@ -127,7 +126,7 @@ class applovin_reward_video_calc:
                 day_head_str = day.strftime('%Y-%m-%d')
                 day_tail = day + timedelta(days=self._date_step)
                 day_tail_str = day_tail.strftime('%Y-%m-%d')
-    
+
                 query_sql = """
                     insert into temp_count_info
                     with psd_ins as (
