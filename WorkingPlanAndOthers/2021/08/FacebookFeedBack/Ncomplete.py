@@ -8,9 +8,10 @@ logger = log.get_logger('RewardVideo')
 
 class applovin_reward_video_calc:
     _app_list = ['saori_gp', 'dohko_gp', 'aiolos_gp', 'saori_ip', 'dohko_ip', 'aiolos_ip', 'saga_gp']
+    # _app_list = ['aiolos_gp']
     _date_start = date(2021, 7, 20)
-    _date_end = date(2021, 7, 23)
-    _date_step = 2
+    _date_end = date(2021, 7, 21)
+    _date_step = 1
 
     def db_conn(self):
         engine_PROD = create_engine('postgres://gv_developer:AjFtinLDMQ0w7i0f@3.230.194.153:5200/db_redshift_gv')
@@ -119,8 +120,7 @@ class applovin_reward_video_calc:
             db_session.execute(sql_statement)
             db_session.commit()
 
-    def run_query(self, db_session):
-        app_table = self.get_log_table()
+    def run_query(self, db_session, app_table):
         for app_name in self._app_list:
             for i in range(0, (self._date_end - self._date_start).days + 1, self._date_step):
                 day = self._date_start + timedelta(days=i)
@@ -139,10 +139,11 @@ class applovin_reward_video_calc:
                         from {app_table} log
                                  inner join temp_install_info info
                                             on info.muid = log.muid
+                                                and info.app_name = '{app_name}'
                                                 and trunc(info.ins_time) >= '{date_head_str}'
                                                 and trunc(info.ins_time) < '{date_tail_str}'
-                                                and trunc(log_time) >= '{date_head_str}'
-                                                and trunc(log_time) <= '{date_tail_str}'
+                                                {log_time_filter} >= '{date_head_str}'
+                                                {log_time_filter} <= '{date_tail_str}'
                                                 and action_type = 2
                         where 1 = 1
                           and log.action_time <= dateadd(day, 1, info.ins_time)
@@ -166,32 +167,41 @@ class applovin_reward_video_calc:
                     date_head_str=day_head_str,
                     date_tail_str=day_tail_str,
                     date_range=f'{day_head_str}_{day_tail_str}',
-                    app_table=app_table.get(app_name)
+                    app_table=app_table.get(app_name),
+                    app_name=app_name,
+                    log_time_filter='and trunc({time_alias})'.format(
+                        time_alias='action_time' if app_name in ('aiolos_gp', 'aiolos_ip', 'saga_gp') else 'log_time'
+                    )
                 )
-                logger.info("查询开始！", f'{day_head_str}_{day_tail_str}')
+                logger.info("查询开始！", f'{day_head_str}_{day_tail_str}_{app_name}')
                 db_session.execute(query_sql)
-            
+
         logger.info("最终查询开始！")
         rs = db_session.execute("""
             select
-                app_name, country, complete_type,
+                app_name, 
+                country, 
+                complete_type,
                 sum(c) as muid_count,
                 sum(muid_count) over (partition by app_name, country order by complete_type rows between current row and unbounded following) as sum_count
             from
                 temp_count_info
             group by
-                app_name, country, complete_type
+                app_name, 
+                country, 
+                complete_type
         """).fetchall()
         logger.info("最终查询结束！")
         return rs
 
     def interstitial_and_rewardedvideo_calc(self):
         country_map = self.get_country_filter()
+        app_table = self.get_log_table()
         db_session = self.db_conn()
 
         self.create_temp_table(db_session)
         self.fill_temp_table(db_session, country_map)
-        rowset = self.run_query(db_session)
+        rowset = self.run_query(db_session, app_table)
 
         logger.info("写入csv！")
         self.get_result_csv(rowset, db_session)
@@ -202,6 +212,10 @@ class applovin_reward_video_calc:
             dnu_map[app_name] = self.get_sum_dnu_map(app_name, db_session)
 
         try:
+            db_session.execute("""
+                drop table if exists temp_count_info;
+                drop table if exists temp_install_info;
+            """)
             db_session.commit()
         except:
             db_session.rollback()
