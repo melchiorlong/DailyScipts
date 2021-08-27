@@ -14,7 +14,6 @@ class RetentionCalc:
         self._app_list = ['aiolos_gp']
         self._install_date_end = datetime.strptime(execute_date, "%Y-%m-%d")
         self._install_date_start = self._install_date_end + timedelta(days=-37)
-        self._log_date_step = -1
         self._app_package_name_map = {
             'saori_gp': 'art.color.planet.paint.by.number.game.puzzle.free',
             'dohko_gp': 'art.color.planet.oil.paint.canvas.number.free',
@@ -52,10 +51,10 @@ class RetentionCalc:
                    trunc(convert_timezone('Asia/Shanghai', log.action_time)) as action_date
             from spectrum.fact_ivt_poseidon_log log
             where 1 = 1
-              and trunc(log.log_time) = '{log_date_start}'
+              and trunc(convert_timezone('Asia/Shanghai', log.log_time)) = '{log_date}'
             group by muid, app_package_name, action_date 
         """.format(
-            log_date_start=(self._install_date_end + timedelta(days=self._log_date_step)).strftime('%Y-%m-%d'),
+            log_date=self._install_date_end.strftime('%Y-%m-%d'),
         )
 
         db_session.execute(sql_statement)
@@ -106,7 +105,7 @@ class RetentionCalc:
                                   inner join muid_dimension md
                                              on md.kch_id = log.kochava_device_id
                          where 1 = 1
-                           and trunc(log.date_occurred) = '{log_date_start}'
+                           and trunc(log.date_occurred) = '{log_date}'
                          group by muid, action_date
                      ),
                      ins_psd_log as (
@@ -131,11 +130,11 @@ class RetentionCalc:
                             and day_dimension >= 0
                             and day_dimension <= 37
                      )
-                select case when iklog.muid is not null then iklog.muid else iplog.muid end                            as muid,
-                       case when iklog.install_date is not null then iklog.install_date else iplog.install_date end    as install_date,
-                       case when iklog.day_dimension is not null then iklog.day_dimension else iplog.day_dimension end as day_dimension,
-                       case when iplog.day_dimension is not null then 1 else 0 end                                     as poseidon_active,
-                       case when iklog.day_dimension is not null then 1 else 0 end                                     as kch_active
+                select coalesce(iklog.muid, iplog.muid)                            as muid,
+                       coalesce(iklog.install_date, iplog.install_date)            as install_date,
+                       coalesce(iklog.day_dimension, iplog.day_dimension)          as day_dimension,
+                       case when iplog.day_dimension is not null then 1 else 0 end as poseidon_active,
+                       case when iklog.day_dimension is not null then 1 else 0 end as kch_active
                 from ins_psd_log iklog
                          full join
                      ins_kch_log iplog
@@ -147,7 +146,7 @@ class RetentionCalc:
                 app_name=app_name,
                 date_start=self._install_date_start.strftime('%Y-%m-%d'),
                 date_end=self._install_date_end.strftime('%Y-%m-%d'),
-                log_date_start=(self._install_date_end + timedelta(days=self._log_date_step)).strftime('%Y-%m-%d'),
+                log_date=self._install_date_end.strftime('%Y-%m-%d'),
                 app_package_name_filter="and log.app_package_name = '{package_name}'".format(
                     package_name=self._app_package_name_map.get(app_name)
                 )
@@ -167,7 +166,7 @@ class RetentionCalc:
         db_session = self.db_conn()
         self.create_temp_table(db_session)
         self.fillin_temp_table(db_session)
-        # self.init_data_by_execute_date(db_session, self.execute_date)
+        self.init_data_by_execute_date(db_session, self.execute_date)
         self.insert_calc(db_session)
         self.session_close(db_session)
 
