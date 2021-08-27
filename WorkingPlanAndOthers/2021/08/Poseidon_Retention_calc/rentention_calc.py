@@ -40,7 +40,6 @@ class RetentionCalc:
                 );
         """
         db_session.execute(temp_table_sql)
-        # print(temp_table_sql)
 
     def fillin_temp_table(self, db_session):
 
@@ -56,9 +55,7 @@ class RetentionCalc:
         """.format(
             log_date=self._install_date_end.strftime('%Y-%m-%d'),
         )
-
         db_session.execute(sql_statement)
-        # print(sql_statement)
 
     def init_data_by_execute_date(self, db_session, execute_date):
         init_sql = """
@@ -69,10 +66,7 @@ class RetentionCalc:
         """.format(
             execute_date=execute_date,
         )
-
         db_session.execute(init_sql)
-        # print(init_sql)
-
 
     def insert_calc(self, db_session):
 
@@ -130,18 +124,28 @@ class RetentionCalc:
                             and day_dimension >= 0
                             and day_dimension <= 37
                      )
-                select coalesce(iklog.muid, iplog.muid)                            as muid,
-                       coalesce(iklog.install_date, iplog.install_date)            as install_date,
-                       coalesce(iklog.day_dimension, iplog.day_dimension)          as day_dimension,
-                       case when iplog.day_dimension is not null then 1 else 0 end as poseidon_active,
-                       case when iklog.day_dimension is not null then 1 else 0 end as kch_active
-                from ins_psd_log iklog
-                         full join
-                     ins_kch_log iplog
-                     on
-                                 iklog.day_dimension = iplog.day_dimension
+                select iklog.muid,
+                       iklog.install_date,
+                       iklog.day_dimension,
+                       case when iplog.day_dimension is not null then 1 else 0 end,
+                       case when iklog.day_dimension is not null then 1 else 0 end
+                from ins_kch_log iklog
+                         left join ins_psd_log iplog 
+                             on iklog.day_dimension = iplog.day_dimension 
+                             and iklog.muid = iplog.muid
+                             and iklog.install_date = iplog.install_date
+                union
+                select iplog.muid,
+                       iplog.install_date,
+                       iplog.day_dimension,
+                       case when iplog.day_dimension is not null then 1 else 0 end,
+                       case when iklog.day_dimension is not null then 1 else 0 end
+                from ins_kch_log iklog
+                         right join ins_psd_log iplog 
+                             on iklog.day_dimension = iplog.day_dimension 
                              and iklog.muid = iplog.muid
                              and iklog.install_date = iplog.install_date;
+     
             """.format(
                 app_name=app_name,
                 date_start=self._install_date_start.strftime('%Y-%m-%d'),
