@@ -141,11 +141,10 @@ class applovin_reward_video_calc:
                                                 and info.app_name = '{app_name}'
                                                 and trunc(info.ins_time) >= '{date_head_str}'
                                                 and trunc(info.ins_time) < '{date_tail_str}'
-                                                {log_time_filter} >= '{date_head_str}'
-                                                {log_time_filter} <= '{date_tail_str}'
+                                                {log_time_filter}
                                                 and action_type = 2
                         where 1 = 1
-                          and log.action_time <= dateadd(day, 1, info.ins_time)
+                          and {epoch_transfer} <= dateadd(day, 1, info.ins_time)
                         group by info.muid,
                                  info.country,
                                  trunc(info.ins_time),
@@ -168,9 +167,10 @@ class applovin_reward_video_calc:
                     date_range=f'{day_head_str}_{day_tail_str}',
                     app_table=app_table.get(app_name),
                     app_name=app_name,
-                    log_time_filter='and trunc({time_alias})'.format(
-                        time_alias='action_time' if app_name in ('aiolos_gp', 'aiolos_ip', 'saga_gp') else 'log_time'
-                    )
+                    epoch_transfer="log.action_time" if app_name in ['aiolos_ip', 'aiolos_gp',
+                                                       'saga_gp'] else "timestamp 'epoch' + log.action_time * interval '1 second'",
+                    log_time_filter="" if app_name in ['aiolos_ip', 'aiolos_gp',
+                                                       'saga_gp'] else f" and trunc(log.log_time) >= '{day_head_str}' and trunc(log.log_time) <= '{day_tail_str}'",
                 )
                 logger.info("查询开始！", f'{day_head_str}_{day_tail_str}_{app_name}')
                 db_session.execute(query_sql)
