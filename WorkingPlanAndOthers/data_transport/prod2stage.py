@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from rock.common import log
 
-from redshift.prod2dev import table_list
 
 logger = log.get_logger('prod2stage')
 
@@ -13,7 +12,8 @@ def _is_dml(sql_statement):
     判断是不是操作性sql
     :return:
     """
-    for key_word in ['cancel', 'unload', 'copy', 'into', 'create', 'alter', 'drop', 'grant', 'revoke', 'insert', 'delete', 'update']:  # 暂时先只进行简单判断，更复杂的判断逻辑后续再考虑
+    for key_word in ['cancel', 'unload', 'copy', 'into', 'create', 'alter', 'drop', 'grant', 'revoke', 'insert',
+                     'delete', 'update']:  # 暂时先只进行简单判断，更复杂的判断逻辑后续再考虑
         if key_word in sql_statement.lower():
             return True
     return False
@@ -24,7 +24,7 @@ session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=en
 
 sql_list = [
     """
-    unload ('select muid,user_segment,action_time,log_time,ilrd_country from {tb}') to 's3://gvprod/tmp/redshift/data_sync/{date}/{tb_name}/data'
+    unload ('select * from {tb}') to 's3://gvprod/tmp/redshift/data_sync/{date}/{tb_name}/data'
     iam_role 'arn:aws:iam::462744805499:role/redshift-s3-rw'
     format as parquet
     allowoverwrite
@@ -34,7 +34,7 @@ sql_list = [
         date=str(datetime.utcnow().date())
     )
     for tb in [
-        "spectrum.fact_ivt_poseidon_log where trunc(log_time) >= ''2021-08-20'' and trunc(log_time) <= ''2021-08-22'' ",
+        "muid_dimension",
         # "kch_aiolos_gp_install_info where trunc(date_occurred) >= ''2021-06-10''",
         # "kch_aiolos_ip_install_info where trunc(date_occurred) >= ''2021-06-10''",
         # "muid_dimension",
@@ -54,6 +54,7 @@ sql_list = [
 try:
     logger.info("start")
     import time
+
     s = time.time()
     for sql in sql_list:
         rs = session.execute(sql)
@@ -71,4 +72,3 @@ except Exception as e:
     logger.traceback()
     s = str(e)
     print(s)
-

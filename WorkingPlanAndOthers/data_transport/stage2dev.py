@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from rock.common import log
 
-from redshift.prod2dev import table_list
 
 logger = log.get_logger('sc')
 
@@ -33,7 +32,9 @@ sql_list = [
         tb=tb,
         date=str(datetime.utcnow().date())
     )
-    for tb in table_list
+    for tb in [
+        "muid_dimension",
+    ]
 ]
 
 try:
