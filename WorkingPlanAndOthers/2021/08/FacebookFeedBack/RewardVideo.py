@@ -8,9 +8,9 @@ logger = log.get_logger('RewardVideo')
 
 class applovin_reward_video_calc:
     _app_list = ['saori_gp', 'dohko_gp', 'aiolos_gp', 'saori_ip', 'dohko_ip', 'aiolos_ip', 'saga_gp']
-    _date_start = date(2021, 7, 20)
-    _date_end = date(2021, 7, 23)
-    _date_step = 2
+    _date_start = date(2021, 8, 23)
+    _date_end = date(2021, 8, 23)
+    _date_step = 1
 
     def db_conn(self):
         engine_PROD = create_engine('postgres://gv_developer:AjFtinLDMQ0w7i0f@3.230.194.153:5200/db_redshift_gv')
@@ -85,7 +85,7 @@ class applovin_reward_video_calc:
                 select 
                     md.muid,
                     info.country_code as country,
-                    info.date_occurred as ins_time,
+                    dateadd(hours, 8, info.date_occurred) as ins_time,
                     '{app_name_iter}' as app_name
                 from 
                     kch_{app_name_iter}_install_info info
@@ -94,8 +94,18 @@ class applovin_reward_video_calc:
                 on md.kch_id = info.kochava_device_id
                 where 1 = 1
                     {country_filter}
-                    and trunc(info.date_occurred) >= '{date_start}'
-                    and trunc(info.date_occurred) <= '{date_end}';
+                    and (case 
+                        when 
+                            idfa is not null and idfa != '' 
+                            then idfa 
+                        when
+                            adid is not null and adid != ''
+                            then adid
+                        else
+                            null
+                    end) is not null
+                    and trunc(dateadd(hours, 8, info.date_occurred)) >= '{date_start}'
+                    and trunc(dateadd(hours, 8, info.date_occurred)) <= '{date_end}';
             """.format(
                 date_start=self._date_start.strftime('%Y-%m-%d'),
                 date_end=self._date_end.strftime('%Y-%m-%d'),
@@ -128,12 +138,12 @@ class applovin_reward_video_calc:
 
                                             and trunc(info.ins_time) >= '{date_head_str}'
                                             and trunc(info.ins_time) < '{date_tail_str}'
-                                            and trunc(log_time) >= '{date_head_str}'
-                                            and trunc(log_time) <= '{date_tail_str}'
+                                            and trunc(dateadd(hours, 8, log_time)) >= '{date_head_str}'
+                                            and trunc(dateadd(hours, 8, log_time)) <= '{date_tail_str}'
                                             and action_type = 'impression'
                                             and ad_format in ('interstitial', 'rewardedvideo')
                     where 1 = 1
-                      and log.action_time <= dateadd(day, 1, info.ins_time)
+                      and dateadd(hours, 8, log.action_time) <= dateadd(day, 1, info.ins_time)
                     group by info.muid,
                              info.country,
                              trunc(info.ins_time),
