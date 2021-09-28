@@ -19,7 +19,7 @@ def _is_dml(sql_statement):
     return False
 
 
-engine = create_engine('postgresql://gv_developer:AjFtinLDMQ0w7i0f@3.230.194.153:5200/db_redshift_dev')
+engine = create_engine('postgresql://gv_developer:AjFtinLDMQ0w7i0f@3.230.194.153:5200/db_redshift_gv')
 session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))()
 
 sql_list = [
@@ -34,7 +34,7 @@ sql_list = [
         date=str(datetime.utcnow().date())
     )
     for tb in [
-        "muid_dimension",
+        "mid_ilrd_dh_fb_cpm",
         # "kch_aiolos_gp_install_info where trunc(date_occurred) >= ''2021-06-10''",
         # "kch_aiolos_ip_install_info where trunc(date_occurred) >= ''2021-06-10''",
         # "muid_dimension",

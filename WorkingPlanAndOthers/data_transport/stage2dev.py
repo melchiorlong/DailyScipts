@@ -33,7 +33,7 @@ sql_list = [
         date=str(datetime.utcnow().date())
     )
     for tb in [
-        "muid_dimension",
+        "mid_ilrd_dh_fb_cpm",
     ]
 ]
 
