@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from rock.common import log
 
-
 logger = log.get_logger('sc')
 
 
@@ -25,7 +24,7 @@ session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=en
 sql_list = [
     """
     delete from {tb};
-    copy {tb} from 's3://gvdev/tmp/redshift/data_sync/{date}/{tb}/data'
+    copy {tb} from 's3://gvdev/tmp/redshift/data_sync/{date}/temp_mid_ilrd_campaign_roi_total_rev_new/data'
     iam_role 'arn:aws:iam::149870400580:role/redshift-s3-rw'
     format as parquet
     """.format(
@@ -33,13 +32,18 @@ sql_list = [
         date=str(datetime.utcnow().date())
     )
     for tb in [
-        "mid_ilrd_dh_fb_cpm",
+        "mid_ilrd_campaign_roi_total_rev",
+        # "dws_ua_muid_campaign_detail",
+        # "stat_kch_install_retention_count",
+        # "mid_dh_ua_data",
+        # "dim_poseidon_campaign_info",
     ]
 ]
 
 try:
     logger.info("start")
     import time
+
     s = time.time()
     for sql in sql_list:
         rs = session.execute(sql)
@@ -57,4 +61,3 @@ except Exception as e:
     logger.traceback()
     s = str(e)
     print(s)
-
