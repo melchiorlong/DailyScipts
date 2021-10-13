@@ -24,7 +24,7 @@ session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=en
 sql_list = [
     """
     delete from {tb};
-    copy {tb} from 's3://gvdev/tmp/redshift/data_sync/{date}/temp_mid_ilrd_campaign_roi_total_rev_new/data'
+    copy {tb} from 's3://gvdev/tmp/redshift/data_sync/{date}/{tb}/data'
     iam_role 'arn:aws:iam::149870400580:role/redshift-s3-rw'
     format as parquet
     """.format(
@@ -32,6 +32,9 @@ sql_list = [
         date=str(datetime.utcnow().date())
     )
     for tb in [
+        "mid_dh_ua_data",
+        # "dim_poseidon_campaign_info",
+        "stat_kch_install_retention_count",
         "mid_ilrd_campaign_roi_total_rev",
         # "dws_ua_muid_campaign_detail",
         # "stat_kch_install_retention_count",

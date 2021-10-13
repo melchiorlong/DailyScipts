@@ -34,16 +34,15 @@ sql_list = [
         date=str(datetime.utcnow().date())
     )
     for tb in [
-        # "mid_ilrd_dh_fb_cpm",
-        # "dws_ua_muid_campaign_detail",
-        # "kch_aiolos_gp_install_info where trunc(date_occurred) >= ''2021-06-10''",
-        # "kch_aiolos_ip_install_info where trunc(date_occurred) >= ''2021-06-10''",
-        # "stat_kch_install_retention_count",
+        "mid_dh_ua_data",
+        # "dim_poseidon_campaign_info",
+        "stat_kch_install_retention_count",
+        "mid_ilrd_campaign_roi_total_rev",
         # "mid_dh_ua_data",
         # "dim_poseidon_campaign_info",
         # 'dim_poseidon_campaign_info',
         # 'stat_kch_install_retention_count',
-        'temp_mid_ilrd_campaign_roi_total_rev_new'
+        # 'temp_mid_ilrd_campaign_roi_total_rev_new'
     ]
 ]
 
