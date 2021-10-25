@@ -1,59 +1,59 @@
-from datetime import datetime, timedelta
-import re
+import datetime
 
+l1 = \
+    {'campaign_id': '12571866870', 'campaign_name': 'gv_jimmy_saori_ip_us_0318#fans4', 'media_source': 'Google',
+     'country_list': ['US'],
+     'ret1_info_list': [{'date': datetime.date(2021, 10, 1), 'num': None},
+                        {'date': datetime.date(2021, 10, 2), 'num': None},
+                        {'date': '2021-10-01', 'num': None},
+                        {'date': '2021-10-02', 'num': None}],
+     'ret7_info_list': [{'date': datetime.date(2021, 10, 1), 'num': None},
+                        {'date': datetime.date(2021, 10, 2), 'num': None}, {'date': '2021-10-01', 'num': None},
+                        {'date': '2021-10-02', 'num': None}], 'roi0_info_list': [
+        {'date': datetime.date(2021, 10, 1), 'numerator': 20.6608072335835, 'denominator': 1274.398757},
+        {'date': datetime.date(2021, 10, 2), 'numerator': 25.6494595343869, 'denominator': 1276.236651},
+        {'date': '2021-10-01', 'numerator': None, 'denominator': None},
+        {'date': '2021-10-02', 'numerator': None, 'denominator': None}], 'roi7_info_list': [
+        {'date': datetime.date(2021, 10, 1), 'numerator': 47.7097780104139, 'denominator': 1274.398757},
+        {'date': datetime.date(2021, 10, 2), 'numerator': 56.0819663301863, 'denominator': 1276.236651},
+        {'date': '2021-10-01', 'numerator': None, 'denominator': None},
+        {'date': '2021-10-02', 'numerator': None, 'denominator': None}], 'roi30_info_list': [
+        {'date': datetime.date(2021, 10, 1), 'numerator': 54.8078212829742, 'denominator': 1274.398757},
+        {'date': datetime.date(2021, 10, 2), 'numerator': 61.7264759740968, 'denominator': 1276.236651},
+        {'date': '2021-10-01', 'numerator': None, 'denominator': None},
+        {'date': '2021-10-02', 'numerator': None, 'denominator': None}],
+     'cost_info_list': [{'date': datetime.date(2021, 10, 1), 'num': 1274.398757},
+                        {'date': datetime.date(2021, 10, 2), 'num': 1276.236651}, {'date': '2021-10-01', 'num': None},
+                        {'date': '2021-10-02', 'num': None}],
+     'kov_dnu_info_list': [{'date': datetime.date(2021, 10, 1), 'num': None},
+                           {'date': datetime.date(2021, 10, 2), 'num': None}, {'date': '2021-10-01', 'num': None},
+                           {'date': '2021-10-02', 'num': None}],
+     'dnu_info_list': [{'date': datetime.date(2021, 10, 1), 'num': None},
+                       {'date': datetime.date(2021, 10, 2), 'num': None}, {'date': '2021-10-01', 'num': 72},
+                       {'date': '2021-10-02', 'num': 71}],
+     'kov_cpi_info_list': [{'date': datetime.date(2021, 10, 1), 'numerator': 1274.398757, 'denominator': None},
+                           {'date': datetime.date(2021, 10, 2), 'numerator': 1276.236651, 'denominator': None},
+                           {'date': '2021-10-01', 'numerator': None, 'denominator': None},
+                           {'date': '2021-10-02', 'numerator': None, 'denominator': None}],
+     'cpi_info_list': [{'date': datetime.date(2021, 10, 1), 'numerator': 1274.398757, 'denominator': None},
+                       {'date': datetime.date(2021, 10, 2), 'numerator': 1276.236651, 'denominator': None},
+                       {'date': '2021-10-01', 'numerator': None, 'denominator': 72},
+                       {'date': '2021-10-02', 'numerator': None, 'denominator': 71}],
+     'ctr_info_list': [{'date': datetime.date(2021, 10, 1), 'numerator': 1936, 'denominator': 86103},
+                       {'date': datetime.date(2021, 10, 2), 'numerator': 1869, 'denominator': 87275},
+                       {'date': '2021-10-01', 'numerator': None, 'denominator': None},
+                       {'date': '2021-10-02', 'numerator': None, 'denominator': None}],
+     'cvr_info_list': [{'date': datetime.date(2021, 10, 1), 'numerator': 221, 'denominator': 221},
+                       {'date': datetime.date(2021, 10, 2), 'numerator': 224, 'denominator': 224},
+                       {'date': '2021-10-01', 'numerator': None, 'denominator': None},
+                       {'date': '2021-10-02', 'numerator': None, 'denominator': None}],
+     'cpm_info_list': [{'date': datetime.date(2021, 10, 1), 'numerator': 1274.398757, 'denominator': 86103},
+                       {'date': datetime.date(2021, 10, 2), 'numerator': 1276.236651, 'denominator': 87275},
+                       {'date': '2021-10-01', 'numerator': None, 'denominator': None},
+                       {'date': '2021-10-02', 'numerator': None, 'denominator': None}]}
 
+t1 = datetime.date(2021, 10, 1)
+# t1 = datetime.datetime(2012, 11, 19, 0, 0)
+print(t1)
 
-start_date_dt = datetime.strptime('2021-10-01', '%Y-%m-%d')
-end_date_dt = datetime.strptime('2021-10-02', '%Y-%m-%d')
-
-
-print((start_date_dt - end_date_dt).days)
-
-
-print((end_date_dt + timedelta(days=-30)).strftime('%Y-%m-%d'))
-
-
-#
-# if (end_date_dt > start_date_dt):
-#     print(1)
-# else:
-#     print(0)
-#
-
-
-
-#
-#
-#
-#
-#
-# string1 = """
-#         google.protobuf.Int32Value kch_dnu = 4;
-#         google.protobuf.Int32Value kch_day1_install = 5;
-#         google.protobuf.Int32Value kch_day1_retention = 6;
-#         google.protobuf.BoolValue kch_day1_retention_ge_3 = 7;
-#         google.protobuf.Int32Value kch_day2_install = 8;
-#         google.protobuf.Int32Value kch_day2_retention = 9;
-#         google.protobuf.BoolValue kch_day2_retention_ge_3 = 10;
-#         google.protobuf.Int32Value kch_day3_install = 11;
-#         google.protobuf.Int32Value kch_day3_retention = 12;
-#         google.protobuf.BoolValue kch_day3_retention_ge_3 = 13;
-#         google.protobuf.Int32Value kch_day7_install = 14;
-#         google.protobuf.Int32Value kch_day7_retention = 15;
-#         google.protobuf.BoolValue kch_day7_retention_ge_3 = 16;
-#         google.protobuf.Int32Value kch_day14_install = 17;
-#         google.protobuf.Int32Value kch_day14_retention = 18;
-#         google.protobuf.BoolValue kch_day14_retention_ge_3 = 19;
-#         google.protobuf.Int32Value kch_day30_install = 20;
-#         google.protobuf.Int32Value kch_day30_retention = 21;
-#         google.protobuf.BoolValue kch_day30_retention_ge_3 = 22;
-# """
-#
-# # re.sub('\s\d{1,}', repl, string1, count=0, flags=0)
-# #
-# # string1.reg
-#
-#
-# pattern = re.compile(r'\s\d{1,}')   # 查找数字
-# result1 = pattern.findall(string1)
-# print(result1)
+print(t1.strftime('%Y-%m-%d'))
