@@ -16,8 +16,12 @@ def _is_dml(sql_statement):
             return True
     return False
 
+# Geek 库
+engine = create_engine('postgresql://redshift_geek_admin:i7cCXXpCh24MADwsZSIv@redshift-cluster-2.cltonxgv2obv.us-east-1.redshift.amazonaws.com:5439/db_redshift_geek')
 
-engine = create_engine('postgresql://awsuser:bYPoGonCjqlee5WNj@redshift-cluster-2.cltonxgv2obv.us-east-1.redshift.amazonaws.com:5439/db_redshift_dev')
+# Dev 库
+# engine = create_engine('postgresql://awsuser:bYPoGonCjqlee5WNj@redshift-cluster-2.cltonxgv2obv.us-east-1.redshift.amazonaws.com:5439/db_redshift_dev')
+
 session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))()
 # session.connection().connection.set_isolation_level(0)
 
