@@ -37,16 +37,18 @@ sql_list = [
         "mid_dh_ua_data",
         "dim_poseidon_campaign_info",
         "stat_kch_install_retention_count",
-        "ads_posd_kch_retention_activities",
+        # "ads_posd_kch_retention_activities",
         "mid_ilrd_campaign_roi_total_rev",
         # "dws_ua_muid_campaign_detail",
+        # "mid_ilrd_dh_fb_cpm",
         # "stat_kch_install_retention_count",
         # "mid_ilrd_campaign_roi_total_rev",
         # "mid_dh_ua_data",
         # "dim_poseidon_campaign_info",
         # 'dim_poseidon_campaign_info',
         # 'stat_kch_install_retention_count',
-        # 'temp_mid_ilrd_campaign_roi_total_rev_new'
+        # 'temp_mid_ilrd_campaign_roi_total_rev_new',
+        # 'dws_aiolos_behavior_img_action_summary',
     ]
 ]
 
