@@ -34,8 +34,11 @@ sql_list = [
         date=str(datetime.utcnow().date())
     )
     for tb in [
-        "mid_dh_sales_detail",
-        "iap_log",
+        # "mid_dh_sales_detail",
+        # "iap_log",
+        # "temp_mediation_test_20220107",
+        # "ads_mkt_mediation_monitoring",
+        "temp_ads_mkt_mediation_monitoring_20220118",
         # "dim_poseidon_campaign_info",
         # "stat_kch_install_retention_count",
         # "ads_posd_kch_retention_activities",
