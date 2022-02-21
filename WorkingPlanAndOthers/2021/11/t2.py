@@ -239,8 +239,6 @@ for fd in suffix_list:
         suf = r[52:]
         if suf.startswith('/202202') or suf.startswith('/data/202202'):
             # print(r)
-            del_key_list.append(r)
+            s3p.remove_file(r)
+            print(r + ' Deleted!')
 
-for key in del_key_list:
-    s3p.remove_file(key)
-    print(key + ' Deleted!')
