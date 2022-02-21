@@ -241,4 +241,3 @@ for fd in suffix_list:
             # print(r)
             s3p.remove_file(r)
             print(r + ' Deleted!')
-
