@@ -237,7 +237,7 @@ for fd in suffix_list:
     )
     for r in res:
         suf = r[52:]
-        if '202202' in suf:
+        if suf.startswith('/202202') or suf.startswith('/data/202202'):
             # print(r)
             del_key_list.append(r)
 
