@@ -73,10 +73,20 @@ try:
         session.commit()
     e = time.time()
     logger.info('success', e - s)
-    cmd = "aws --profile prod s3 cp  s3://gvprod/tmp/redshift/data_sync/{date} /tmp/red/ds/{date}/".format(
+    cmd1 = """aws --profile prod s3 cp  s3://gvprod/tmp/redshift/data_sync/{date} /tmp/red/ds/{date}/""" \
+        .format(
         date=str(datetime.utcnow().date())
     )
-    print(cmd)
+    cmd2 = """
+        aws --profile dev s3 cp  /tmp/red/ds/{date}/ s3://gvdev/tmp/redshift/data_sync/{date}
+    """.format(
+        date=str(datetime.utcnow().date())
+    )
+    print(cmd1)
+    print(cmd2)
+
+
+
 except Exception as e:
     session.rollback()
     logger.traceback()

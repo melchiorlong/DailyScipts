@@ -79,10 +79,6 @@ try:
         session.commit()
     e = time.time()
     logger.info('success', e - s)
-    cmd = "aws --profile dev s3 cp  /tmp/red/ds/{date}/ s3://gvdev/tmp/redshift/data_sync/{date}".format(
-        date=str(datetime.utcnow().date())
-    )
-    print(cmd)
 except Exception as e:
     session.rollback()
     logger.traceback()
