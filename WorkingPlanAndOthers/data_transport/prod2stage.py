@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from rock.common import log
 
-
 logger = log.get_logger('prod2stage')
 
 
@@ -74,6 +73,10 @@ try:
         session.commit()
     e = time.time()
     logger.info('success', e - s)
+    cmd = "aws --profile prod s3 cp  s3://gvprod/tmp/redshift/data_sync/{date} /tmp/red/ds/{date}/".format(
+        date=str(datetime.utcnow().date())
+    )
+    print(cmd)
 except Exception as e:
     session.rollback()
     logger.traceback()

@@ -5,7 +5,6 @@ from rock.common import log
 
 logger = log.get_logger('sc')
 
-
 def _is_dml(sql_statement):
     """
     判断是不是操作性sql
@@ -80,6 +79,10 @@ try:
         session.commit()
     e = time.time()
     logger.info('success', e - s)
+    cmd = "aws --profile dev s3 cp  /tmp/red/ds/{date}/ s3://gvdev/tmp/redshift/data_sync/{date}".format(
+        date=str(datetime.utcnow().date())
+    )
+    print(cmd)
 except Exception as e:
     session.rollback()
     logger.traceback()
