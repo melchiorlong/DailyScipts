@@ -5,7 +5,7 @@ import paramiko
 
 def task_run(muid, start_time_str):
     date = datetime.utcnow().strftime('%Y%m%d')
-
+    local_path = f'/Users/long.tian/PycharmProjects/personal_tianlong_server/WorkingPlanAndOthers/ProdLogAppend/log{date}_{muid}.txt'
     cmd_list = []
     init_cmd = f'> /tmp/log{date}_{muid}.txt'
     current_log_cmd = f'cat /var/logs/gvcommon_gateway.log | grep {muid} >> /tmp/log{date}_{muid}.txt'
@@ -17,9 +17,9 @@ def task_run(muid, start_time_str):
         hostname='3.230.194.153',
         username='ubuntu',
         key_filename='/Users/long.tian/.ssh/key-gv-prod-admin.pem',
-        timeout=5
+        timeout=120
     )
-    time.sleep(2)
+
     stdin, stdout, stderr = ssh.exec_command('ls /var/logs/*.gz | grep gateway')
 
     start_time = datetime.strptime(start_time_str, '%H-%M') + timedelta(hours=-8)
@@ -40,16 +40,20 @@ def task_run(muid, start_time_str):
         cmd = f'zcat {name} | grep {muid} >> /tmp/log{date}_{muid}.txt'
         cmd_list.append(cmd)
 
+    final_cmd_list = []
+    final_cmd_list.append(init_cmd)
+    for cmd in cmd_list:
+        final_cmd_list.append(cmd)
+    final_cmd_list.append(current_log_cmd)
+
+    cmd_str = "\n".join(final_cmd_list)
+
     try:
-        ssh.exec_command(init_cmd)
-        print(init_cmd + ' Done')
 
-        for cmd in cmd_list:
-            ssh.exec_command(cmd)
-            print(cmd + ' Done')
+        ssh.exec_command(cmd_str)
+        print(cmd_str + ' Done')
 
-        ssh.exec_command(current_log_cmd)
-        print(current_log_cmd + ' Done')
+        time.sleep(2)
     except Exception as e:
         s = str(e)
         print(s)
