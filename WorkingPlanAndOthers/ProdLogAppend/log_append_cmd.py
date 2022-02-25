@@ -1,30 +1,63 @@
-from datetime import datetime
+from datetime import datetime, timedelta
+import time
+import paramiko
 
-date = datetime.utcnow().strftime('%Y%m%d')
-path = "/Users/long.tian/PycharmProjects/personal_tianlong_server/WorkingPlanAndOthers/ProdLogAppend/log_list.txt"
 
-muid = 'db2dc004'
+def task_run(muid, start_time_str):
+    date = datetime.utcnow().strftime('%Y%m%d')
 
-cmd_list = []
-log_list = []
-with open(path, 'r') as file:
-    log_name = file.readlines()
-    log_list.append(log_name)
+    cmd_list = []
+    init_cmd = f'> /tmp/log{date}_{muid}.txt'
+    current_log_cmd = f'cat /var/logs/gvcommon_gateway.log | grep {muid} >> /tmp/log{date}_{muid}.txt'
 
-for log_fac in log_list[0]:
-    log_name = log_fac.replace('\n', '')
-    cmd = f'zcat /var/logs/{log_name} | grep {muid} >> /tmp/log{date}_{muid}.txt'
-    cmd_list.append(cmd)
+    ssh = paramiko.SSHClient()
+    key = paramiko.AutoAddPolicy()
+    ssh.set_missing_host_key_policy(key)
+    ssh.connect(
+        hostname='3.230.194.153',
+        username='ubuntu',
+        key_filename='/Users/long.tian/.ssh/key-gv-prod-admin.pem',
+        timeout=5
+    )
+    time.sleep(2)
+    stdin, stdout, stderr = ssh.exec_command('ls /var/logs/*.gz | grep gateway')
 
-init_cmd = f'> /tmp/log{date}_{muid}.txt'
-current_log_cmd = f'cat /var/logs/gvcommon_gateway.log | grep {muid} >> /tmp/log{date}_{muid}.txt'
+    start_time = datetime.strptime(start_time_str, '%H-%M') + timedelta(hours=-8)
 
-print('')
-print('========================================================================')
-print('ls /var/logs/ | grep gateway')
-print('========================================================================')
-print(init_cmd)
-for cmd in cmd_list:
-    print(cmd)
-print(current_log_cmd)
-print('========================================================================')
+    new_log_list = []
+    index = 0
+    for lines in stdout:
+        log_name = lines.replace('\n', '')
+        if len(log_name) < 51:
+            continue
+        log_time_str = log_name[40:48]
+        log_time = datetime.strptime(log_time_str, '%H-%M-%S')
+        if log_time <= start_time:
+            index += 1
+        new_log_list.append(lines.replace('\n', ''))
+
+    for name in new_log_list[index - 1:]:
+        cmd = f'zcat {name} | grep {muid} >> /tmp/log{date}_{muid}.txt'
+        cmd_list.append(cmd)
+
+    try:
+        ssh.exec_command(init_cmd)
+        print(init_cmd + ' Done')
+
+        for cmd in cmd_list:
+            ssh.exec_command(cmd)
+            print(cmd + ' Done')
+
+        ssh.exec_command(current_log_cmd)
+        print(current_log_cmd + ' Done')
+    except Exception as e:
+        s = str(e)
+        print(s)
+    finally:
+        ssh.close()
+
+
+task_run(
+    muid='db2dc004',
+    start_time_str='17-30'
+)
