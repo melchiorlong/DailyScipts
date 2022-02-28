@@ -5,7 +5,6 @@ import paramiko
 
 def task_run(muid, start_time_str):
     date = datetime.utcnow().strftime('%Y%m%d')
-    # local_path = f'/Users/long.tian/PycharmProjects/personal_tianlong_server/WorkingPlanAndOthers/ProdLogAppend/log{date}_{muid}.txt'
     cmd_list = []
     init_cmd = f'> /tmp/log{date}_{muid}.txt'
     current_log_cmd = f'cat /var/logs/gvcommon_gateway.log | grep {muid} >> /tmp/log{date}_{muid}.txt'
@@ -44,10 +43,10 @@ def task_run(muid, start_time_str):
         final_cmd_list.append(cmd)
     final_cmd_list.append(current_log_cmd)
 
-    cmd_str = "\n".join(final_cmd_list)
+    cmd_str = "&&".join(final_cmd_list)
     try:
         ssh.exec_command(cmd_str)
-        print(cmd_str + ' Done')
+        print(cmd_str)
         time.sleep(2)
     except Exception as e:
         s = str(e)
@@ -57,6 +56,6 @@ def task_run(muid, start_time_str):
 
 
 task_run(
-    muid='db2dc004',
-    start_time_str='17-30'
+    muid='488aa259-6f68-4e9b-9e43-65fc93d1870e',
+    start_time_str='20-35'
 )
