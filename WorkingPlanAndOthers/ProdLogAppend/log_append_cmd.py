@@ -3,7 +3,15 @@ import time
 import paramiko
 
 
-def task_run(muid, start_time_str):
+def task_run(muid, start_time_str, end_time_str=None):
+    start_time = datetime.strptime(start_time_str, '%H-%M') + timedelta(hours=-8)
+
+    if end_time_str:
+        end_time = datetime.strptime(end_time_str, '%H-%M') + timedelta(hours=-8)
+    else:
+        end_time_HM = datetime.utcnow().strftime('%H-%M')
+        end_time = datetime.strptime(end_time_HM, '%H-%M')
+
     date = datetime.utcnow().strftime('%Y%m%d')
     cmd_list = []
     init_cmd = f'> /tmp/log{date}_{muid}.txt'
@@ -20,7 +28,6 @@ def task_run(muid, start_time_str):
     )
 
     stdin, stdout, stderr = ssh.exec_command('ls /var/logs/*.gz | grep gateway')
-    start_time = datetime.strptime(start_time_str, '%H-%M') + timedelta(hours=-8)
     new_log_list = []
     index = 0
     for lines in stdout:
@@ -29,6 +36,8 @@ def task_run(muid, start_time_str):
             continue
         log_time_str = log_name[40:48]
         log_time = datetime.strptime(log_time_str, '%H-%M-%S')
+        if log_time >= end_time:
+            continue
         if log_time <= start_time:
             index += 1
         new_log_list.append(lines.replace('\n', ''))
@@ -41,11 +50,12 @@ def task_run(muid, start_time_str):
     final_cmd_list.append(init_cmd)
     for cmd in cmd_list:
         final_cmd_list.append(cmd)
-    final_cmd_list.append(current_log_cmd)
+    if not end_time_str:
+        final_cmd_list.append(current_log_cmd)
 
-    cmd_str = "&&".join(final_cmd_list)
+    cmd_str = ";".join(final_cmd_list)
     try:
-        ssh.exec_command(cmd_str)
+        # ssh.exec_command(cmd_str)
         print(cmd_str)
         time.sleep(2)
     except Exception as e:
@@ -56,6 +66,7 @@ def task_run(muid, start_time_str):
 
 
 task_run(
-    muid='488aa259-6f68-4e9b-9e43-65fc93d1870e',
-    start_time_str='20-35'
+    muid='7ec6668d',
+    start_time_str='16-00',
+    # end_time_str='16-14',
 )
