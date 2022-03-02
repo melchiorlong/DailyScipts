@@ -55,7 +55,7 @@ def task_run(muid, start_time_str, end_time_str=None):
 
     cmd_str = ";".join(final_cmd_list)
     try:
-        # ssh.exec_command(cmd_str)
+        ssh.exec_command(cmd_str)
         print(cmd_str)
         time.sleep(2)
     except Exception as e:
