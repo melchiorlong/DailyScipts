@@ -3,7 +3,16 @@ import time
 import paramiko
 
 
-def task_run(muid, start_time_str, end_time_str=None):
+def task_run(muid, start_time_str, end_time_str=None, factor_list=None):
+    filter_factors_str = ""
+    if factor_list:
+        factors = list(filter(None, factor_list))
+        filter_factors_str = " ".join(
+            "| grep {}".format(
+                fac
+            ) for fac in factors
+        )
+
     start_time = datetime.strptime(start_time_str, '%H-%M') + timedelta(hours=-8)
 
     if end_time_str:
@@ -15,7 +24,7 @@ def task_run(muid, start_time_str, end_time_str=None):
     date = datetime.utcnow().strftime('%Y%m%d')
     cmd_list = []
     init_cmd = f'> /tmp/log{date}_{muid}.txt'
-    current_log_cmd = f'cat /var/logs/gvcommon_gateway.log | grep {muid} >> /tmp/log{date}_{muid}.txt'
+    current_log_cmd = f'cat /var/logs/gvcommon_gateway.log | grep {muid} {filter_factors_str} >> /tmp/log{date}_{muid}.txt'
 
     ssh = paramiko.SSHClient()
     key = paramiko.AutoAddPolicy()
@@ -43,7 +52,7 @@ def task_run(muid, start_time_str, end_time_str=None):
         new_log_list.append(lines.replace('\n', ''))
 
     for name in new_log_list[index - 1:]:
-        cmd = f'zcat {name} | grep {muid} >> /tmp/log{date}_{muid}.txt'
+        cmd = f'zcat {name} | grep {muid} {filter_factors_str} >> /tmp/log{date}_{muid}.txt'
         cmd_list.append(cmd)
 
     final_cmd_list = []
@@ -66,7 +75,8 @@ def task_run(muid, start_time_str, end_time_str=None):
 
 
 task_run(
-    muid='7ec6668d',
-    start_time_str='16-00',
-    # end_time_str='16-14',
+    muid='660493e4',
+    start_time_str='19-30',
+    # factor_list=['Poseidon', '', ''],
+    # end_time_str='14-00',
 )
