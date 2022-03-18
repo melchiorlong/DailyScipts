@@ -19,10 +19,10 @@ for key in key_list_all:
         if file_name == '_SUCCESS':
             continue
         key_list_extend_aws_key.append(key)
-    try:
-        if len(key_list_extend_aws_key) > 0:
-            for s3_key in key_list_extend_aws_key:
-                # s3p.remove_file(s3_key)
-                print(s3_key + " Deleted! ")
-    except Exception as exception:
-        raise exception
+try:
+    if len(key_list_extend_aws_key) > 0:
+        for s3_key in key_list_extend_aws_key:
+            # s3p.remove_file(s3_key)
+            print(s3_key + " Deleted! ")
+except Exception as exception:
+    raise exception
