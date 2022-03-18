@@ -1,4 +1,0 @@
-create table public.temp_ads_posd_kch_retention_activities_bak_20210913;
-
-alter table public.temp_ads_posd_kch_retention_activities_bak_20210913 owner to gv_developer;
-
