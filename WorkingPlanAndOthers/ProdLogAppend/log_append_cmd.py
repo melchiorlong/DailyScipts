@@ -75,8 +75,8 @@ def task_run(muid, start_time_str, end_time_str=None, factor_list=None):
 
 
 task_run(
-    muid='660493e4',
-    start_time_str='19-30',
+    muid='9a698070',
+    start_time_str='11-10',
     # factor_list=['Poseidon', '', ''],
-    # end_time_str='14-00',
+    # end_time_str='11-43',
 )

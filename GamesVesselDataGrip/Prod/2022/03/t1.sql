@@ -1,48 +1,53 @@
 select
-    rev_temp.app_name,
-    rev_temp.ua_date,
-    rev_temp.ua_country,
-    sum(case when rev_temp.day_dimension = 1 then dau else 0 end) as sum_1_dau,
-    sum(case when rev_temp.day_dimension = 7 then dau else 0 end) as sum_7_dau
-from dws_ua_rev_dau_country_media_d rev_temp
-where 1 = 1
---            and day_dimension in (1, 7)
-  and ua_country = 'US'
-  and app_name = 'saori_gp'
-  and ua_date in (
-    select distinct
-        trunc(date) as date_str
-    from mid_dh_ua_new_data
-    where 1 = 1
-      and campaign_id = '23850097736090767'
-      and country = 'US'
-      and app_name = 'saori_gp'
---       and is_test = 'false'
---       and optimizer = 'david'
-      and to_char(date, 'YYYY-MM') = '2022-01'
-)
-group by rev_temp.ua_country,
-         rev_temp.app_name,
-         rev_temp.ua_date
+            date,
+            case right(app_name, 2)
+                when 'gp' then 'android'
+                when 'ip' then 'iOS'
+            end as platform,
+            app_name,
+            country,
+            vendor as network,
+            dh_adunit_id as adunit_id,
+            dh_adunit_name as adunit_name,
+            placement_name as adplacement_name,
+            bank_info,
+            account_id,
+            sum(req)         as ad_requests,
+            sum(fill)        as matched_requests,
+            sum(impr)        as impressions,
+            sum(click)       as clicks,
+            sum(rev)         as earnings,
+            'USD' as currency,
+            trunc(getdate()) as row_created,
+            trunc(getdate()) as row_updated
+        from
+            mid_dh_market_data
+        where
+            trunc(date) = '2022-03-22'
+        group by date,
+                 platform,
+                 app_name,
+                 country,
+                 vendor,
+                 dh_adunit_id,
+                 dh_adunit_name,
+                 placement_name,
+                 bank_info,
+                 account_id,
+                 currency,
+                 row_created,
+                 row_updated;
+
+
+
+select distinct
+trunc(date)
+from mid_dh_market_data
+where account_id is not null;
 
 
 
 
 select
-distinct ua_media
-from dws_ua_spend_dnu_country_media_d;
-
-
-select
-distinct ua_media
-from dws_ua_rev_dau_country_media_d;
-
-
-
-select
-distinct *
-from mid_dh_ua_new_data
-where 1=1
-and campaign_id = '23849559698140602'
-and optimizer = 'nancy'
-and to_char(date, 'YYYY-MM') = '2022-01'
+distinct account_id
+from mid_dh_market_data
