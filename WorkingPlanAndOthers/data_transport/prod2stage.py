@@ -37,13 +37,14 @@ sql_list = [
         # "iap_log",
         # "temp_mediation_test_20220107",
         # "ads_mkt_mediation_monitoring",
-        "mid_dh_market_data",
-        "temp_mid_ilrd_should_display_20220406",
-        "ads_monetization_psd_ad_info",
-        # "dim_poseidon_campaign_info",
-        # "dws_app_img_statistic_saori_h",
+        # "mid_dh_market_data",
+        # "mid_ilrd_should_display",
+        # "ads_monetization_psd_ad_info",
         # "stat_kch_install_retention_count",
+        # "dim_poseidon_campaign_info",
+        # "mid_dh_ua_data",
         # "ads_posd_kch_retention_activities",
+        "temp_ads_mkt_mediation_monitoring_20220422",
         # "mid_ilrd_campaign_roi_total_rev",
         # "muid_dimension",
         # "stat_kch_install_retention_count",
@@ -76,13 +77,12 @@ try:
         session.commit()
     e = time.time()
     logger.info('success', e - s)
-    cmd1 = """aws --profile prod s3 cp --recursive s3://gvprod/tmp/redshift/data_sync/{date} /tmp/red/ds/{date}""" \
-        .format(
+    cmd1 = """aws --profile prod s3 cp --recursive s3://gvprod/tmp/redshift/data_sync/{date} /tmp/red/ds/{date}
+    """ .format(
         date=str(datetime.utcnow().date())
     )
-    cmd2 = """
-        aws --profile dev s3 cp --recursive /tmp/red/ds/{date}/ s3://gvdev/tmp/redshift/data_sync/{date}
-    """.format(
+    cmd2 = """aws --profile dev s3 cp --recursive /tmp/red/ds/{date}/ s3://gvdev/tmp/redshift/data_sync/{date}
+        """.format(
         date=str(datetime.utcnow().date())
     )
     print(cmd1)
