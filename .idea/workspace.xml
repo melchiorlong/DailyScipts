@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DictionaryAudit/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DictionaryAudit/逻辑梳理.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JupyterDemo/Demo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JupyterDemo/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alfred/workflow/current_rate_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alfred/workflow/current_rate_exchange.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAudit/逻辑梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAudit/逻辑梳理.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,8 +77,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674005264723</updated>
-      <workItem from="1674005266254" duration="2865000" />
+      <workItem from="1674005266254" duration="5896000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1674021571350</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674021571350</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +105,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
