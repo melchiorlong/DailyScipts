@@ -4,7 +4,7 @@
 import sys
 import requests
 import json
-from workflow import Workflow3
+from workflow.workflow3 import Workflow3
 
 
 def main():
