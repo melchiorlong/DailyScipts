@@ -1,0 +1,23 @@
+# 本文件将存储字典内审规则，分为硬性规则、建议规则
+# 目前支持规则 大于 小于 等于
+
+dict_verifying_rules:
+  mandatory_rules:
+    mandatory_rules_list:
+      - the_same_chinese_name,
+      - the_same_english_name,
+
+    the_same_chinese_name:
+      dict_row_name: '字段中文名称'
+      input_row_name: '字段中文名'
+      rule: '='
+      feedback: '字典中已有**字段，是否可复用'
+
+    the_same_english_name:
+      dict_row_name: '字段英文名称'
+      input_row_name: '字段英文名'
+      rule: '='
+      feedback: 'xx英文名称不一致'
+
+
+  suggested_rule:
