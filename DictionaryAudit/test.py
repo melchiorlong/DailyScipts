@@ -1,5 +1,7 @@
 import openpyxl
 from openpyxl import load_workbook
+from openpyxl.utils.cell import coordinate_to_tuple
+
 
 # 1.打开 Excel 表格并获取表格名称
 workbook = load_workbook(filename="/Users/tianlong/Desktop/中信JD.xlsx")
@@ -31,3 +33,8 @@ for sheet_name in sheet_names_list:
 	for i in cell:
 		for j in i:
 			print(j.value)
+			print(j.coordinate)
+			print(coordinate_to_tuple(j.coordinate))
+	print("-----")
+
+
