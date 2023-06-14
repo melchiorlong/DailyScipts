@@ -1,0 +1,20 @@
+{
+  "name": "dailyscipts",
+  "version": "1.0.0",
+  "description": "日常",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melchiorlong/DailyScipts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melchiorlong/DailyScipts/issues"
+  },
+  "homepage": "https://github.com/melchiorlong/DailyScipts#readme"
+}
