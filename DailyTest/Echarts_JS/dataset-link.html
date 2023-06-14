@@ -1,0 +1,122 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=dataset-link&code=M4UwLgKglgtiD2BXMAKAZogdgYzFemABCgJSEDeAUIYfAA54GEC8F1NhANiAOYiYATAFwUAvgBp2NMPHic8dEVQ4cwAJyg8-akQHIAhgA8owXZJU1gAC3gB3AMIEw_MCLT7OoKYQneB-sH1QVzYLQmAkNWwQEQBtbxVY3To1eAFEXDNCXQAmAAYARhys3MKAZhL8goAWSsKAVjqCgDYmgHZdAF1zMMIkwEBjQEhzQEP5QApXQENlQBntQFWIwCLtQHYjQAdTLPrmgDp68UIADhy1gq3t7bW2rba8_a36srXqw_r97oSOAZGJwFZYwD7tBeWrgsvCPV_ndAQ8DoCbmUzjdtltmsc2k9en1dEMxuNAIOegBkIn5ZaoXcHNPY5OEATg2WzK6xB1QeJMIZT29SRvQA9KyUQB1DyYZCEABCqVsmCgICyOTplLaAOq_3pBVhDJupK21XJBU6z01Kl8KkMAEFjMAlIQwABPOgxbLYAK8eBqM26Hw9Ghmw0mE08DQCACSghAhhEeWd3i9UGEFFN9D09XqAFInbqOKANCBjX1nspeubLXpOFBMGKXRZgDBZGArCJ1IgQMWVCnRcAADL6M1IMD8s16IVmZ40EAwOhWIIeyNoeDYRDp3QNtOJ55JlRZsI5q26fOF3vI0vlyumtQ1uvJkCp5ut9ud7t2Le9AdDkfp8iEceT6ez0w-BdH5cWVd5gtFn24RlvAFZVgetZAe-LZtsgl7ZD2R79oOw7AKOT4vlOejvvOYSLhwP4qH-2QboB24gWB-6HlBJ6NjBF5dgh15IYQd6oehz4Tlh2Q4Z-eHfkBxHJKKN5hOGeh0CJLFqPoAhQNxuhlHkCYsdEmDODoKL1MplTxl0LFsQ-ShATQmFviAnBoLoQH4SonD6AARhZxnIqZ9owAEGl6OQDmiEoAACVQ5KIxDkAIohxiQ1nIrZHD8NgaRWoRFhQM4MAAHL6HAEmpOkmQsTQABuHg1noQWidmsjyFAijZOVNkLt42o-AA3OwMBmvYw5qGAawECguiIHQ_jOO6wAAArwAWGlZBgOCMEQKAgIVLhkD-CWYMAYCEAaRp-uOLCsSt6lrEYab7fAsR5J0bUqFAaDELtJgXWtzwbVthByXAm34EQrBPcAF1rMVnA1oQADUhAFLdFgdV1-g9WswQAPIML9KDJZYtFpi5rnidkklka59lOZwuOuZxageWAXnZD5fkUP5SQQ59sD8GhTCQ10IUY-FkXRa5sUqPFiXk65IOlaz30c5gBWqFVCgiF97O_SZfG9KIC4kDDNCa7r2vtZ13W9SjaP9fQC0G6I2tAA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    setTimeout(function () {
+  option = {
+    legend: {},
+    // title: {
+    //   text: '全客户“五主”综合经营--主融资客户增长--分层客户信用卡及借贷关联',
+    //   left: 'center'
+    // },
+    // 全客户“五主”综合经营,主融资客户增长,分层客户信用卡及借贷关联
+    tooltip: {
+      trigger: 'axis',
+      showContent: false
+    },
+    dataset: {
+      source: [
+        ['product', '2018', '2019', '2020', '2021', '2022', '2023'],
+        ['新增激活借记客户数（全口径）', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+        ['新增激活借记客户计划（全口径）', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+        ['新增激活借记客户数（考核口径）', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+        ['新增激活借记客户数计划（考核口径）', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
+      ]
+    },
+    xAxis: { type: 'category' },
+    yAxis: { gridIndex: 0 },
+    grid: { top: '55%' },
+    series: [
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'pie',
+        id: 'pie',
+        radius: '30%',
+        center: ['50%', '25%'],
+        emphasis: {
+          focus: 'self'
+        },
+        label: {
+          formatter: '{b}: {@2018} ({d}%)'
+        },
+        encode: {
+          itemName: 'product',
+          value: '2018',
+          tooltip: '2018'
+        }
+      }
+    ]
+  };
+  myChart.on('updateAxisPointer', function (event) {
+    const xAxisInfo = event.axesInfo[0];
+    if (xAxisInfo) {
+      const dimension = xAxisInfo.value + 1;
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          label: {
+            formatter: '{b}: {@[' + dimension + ']} ({d}%)',
+          },
+          encode: {
+            value: dimension,
+            tooltip: dimension
+          }
+        }
+      });
+    }
+  });
+  myChart.setOption(option);
+});
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

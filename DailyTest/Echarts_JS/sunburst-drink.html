@@ -1,0 +1,487 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=sunburst-drink&code=G4QwTgBAJiAuIQLwQNoCgIQN4cxAdiALYCmAXBAOQgDOMUlANLpgJawlEDKsAngDblsLPAGMA9v3FgKlAMQwADFABsADkoiAvszwRRAC1b8oYEvgro9mHNbyFSsgEL8QogNYQAKiRBMReqD8AK5CAIy6dhDsnDwCQrZRmBJSMlRyAJwA7ACsJCoMAXhaRTpFiXYOQpQAYqkg_P5JMdx8ghQVUSnSsnIkillhGaKaSWVJhsam5pZFep1JVbIAwgbE4kTGJE1JeEGhFBFz1i1x7cK71t1p8gBmGRkkYSPHeiWX47sLUUtUAEriGjbSKXfbhEG7U5tBKvK6SHrpEi3HIgLIaWGYd67T5Jb6VYjVABStE2-GBGIgYMOEOaHFa8Q6FOS8JucluWVuYQARoVLpjYVi7ABdUoiEWYyKdX61MDBdi8HZsOlnGF2a69GBhKAAJgAzKNihDJiYzBZUOVjtKnCQwGAFTS8FCGRddur0lAoAAWUQ5MIGuw4q5GE0zc2XPHWK2uDxcm12xW7KkQI586LK6GM1PM1K9XX9XVhLL-7ECh3zCnSv60AAOsdt9opSZTfKd5wjapZvXy2oyKgyxbGpdh7fsBOcIRIdfjZesTZnelbqqzbvkKhyfa5igHUUFO_nLsu0p4YBAAHcpw3U3OKYvM8vO4jbtqoLqVNuAwLjuLrIGbJax1QAAiYCsCQUAQDUsrsAmC7ps6I4rnIogZJ6ICep674QL-YjBtMZpWF8FYAZQVasDQrD4DBUTXqmt4HnyiFcjkupMRhFK7gG-4jpg0oAAqymSVF2DRLZwW2TL6A-8ggDk6EqLcmFvJ-STfm8DoRtKADysAGDaEFQbAQlprEGb0R2Obul6Pp-sc2HJLhpqzOGRGOFQyziBI-DBIZ-6YCJlx0dxYhSWy2rqJ6XKKcUQ7Oam0qrHGl58v5kJiUuqaISQWS6p6vpRfyHxcS51S8RsJAAOYnoQHBGYEDQHMmvnGfS4lZpJFnyPk67rvlWExYRcXEbxFG-NW1aCLVez1eCN5pXeGUhbcagZCAzy9RxP5FYNrmUAA4ie1bkle03UrNJnwRJiEgJOGTai8qYbWpw7FbIACCY0TU1KW0udrX3h1ciepOaiev27H9biL1ULxviGJNfknY1Z0telDGLeoMn3Xyj2Gs920lb4YDw5SiPNgFc1ma6IVciAIAqLqOTrcpUSqbjdgacRyzsLKND6XKPnHIFsKIeyq3auiYwzsaeFOQNfLSvtICHbcBnE99URC21IthQzjPg4VePy8RmlVeVR3JaTTWa_9CKdTrYTbPr2JbUbO0ADKcOIlFfZbyMqvNaMA7cUAkJ6ihsQ9ENREF0pu6wpBq77tEU0F2a23IWSTmEuoS9jzPCqKejfp8UrEVw4jBGAAD0AA6-A1DapD4BwDAQtbeiZVyXJhwp2hGg5oYEeWixlxXRMzu3XQhU8ogFnrkvHNLjlhnLh6j5XECvWAGxwKwog0InE6ncnv2o5ciGPKiYS5x8Ufs1DlCvaIJCwHvm-iKwreNknomnwH58hRQqieSTMDaxVdtUJw3leAgVEO_T-h8Gpk1Sn_SmEwQpQEUFybUnpe6RzAavXY0oACSNBxBBBtG_J-CCfZHyRifFG_8qYAzUJOFQno3xOwXuAteO0uawFgfAr-x06HIJ-owtBU8g7XVuAMUBztDa8OqAAWQaFQj-wiLaiKtinS6IVRDchAHIrhO4vylHUv-Har1-ASAMJIWu9czBNxbkZSe5l06bmyLqfUtkpYD3wooohxEADqI0kqgh_uTVBqd2rpzUJyH0Pj8EKJ4UEnawSjA0HcCQcJiZIkoIkTExiOVFC6jBsk7hhCR47UgpwcwLjaFIJ0dEvRAMaa3V1NqeRlTIb41kJpYAcZWCHUQTNBh_tJHuNZGoLk7CyndNMSpQueBi6ShEArMw5gHEADUKov13oMhMbjYmsmvlkEA2o8FsxwlMZeQ88Acx2ppfgrBBkQE0sYIy6slQtIAQDC5m4eyYQ2thR51Qqyni-fk2CvzmHp0GMtbxwLzEWmqdUfaJAtl112WbeAr9DkT10X89OupabahyPPPci9_Gy16RA2QABVfAIcwAAFoQIjMaWM3-hTWnpwBdgyKJjOKBLRbIGGStxCaIidov2pkikhRUNqWmuosa3wIXSpRshak0AMKM4-PKJkKoBqUumzEFkitSWKoC4BPAYvMPq-hhr5V8tZKUtQslyl5w1dHB-OL9n4vNjKppcqLpaxCuLbuEULWbVFT8YiAAJEAvBWUvOyY6sRGsiU21ZCAUlahdRbmFbGq18adoJptFyVNrB01coNVE3l4aAbnIMZ6GyFTFksxRffa1lBrQgHwLkuqsrxFGuFiFPIK01BFsHB-IuuAS7rONjpG0Rzs0dxCooFVTFiyBiXoPVFZaSpKxtLwKuyjgg0D4K49dUj04ZCgIKosvjqW3IPaW_EO0eANCDXkkdzqw05t6DMtQyEZ3epSVUo9KxwCPvELBjNzTG1AfSLGbBWROEdstVBz9x7DrTm_v-htY6m3p1uEiJEEcIM9N9X0qgwTxBSqHdRaFWbYULWbehfMManofsjMRZRkgoBnsAsQasiHQ1_Q4_y0lr4rnqsg5qtJKjL18CroBVTzHhKsbsMc9BANkJMQLTx65Sne0XqvWegAouAHSWnZw6ZOLe4lrJshqBBs-rDJacP8asfgeOaiRh1qdcRl1pHXNQGyByEzEo424dkMo3wfAIBOG3nZiT4ywsofkKIUQWRZl-GLbxnzeg-K6XwJIPeGWANScDunR97CVCFa80pJZ2Hh7QbcrpTYogGg3vY3e1kGHRCKFEEKmjHcaUrzM51vt7AODj0IyGzLgHpPTK3ctXk1GqV8dK2XBo17guZt085uFrIQ5PmDjFrCLstVUES1APeFE-tHaQyR7LGcQAZBpo7FrpnaP0uhi_beghghEGq6F1bdW3VlNuFyG-JYfU9sB5QLg7hgj4HcPZ4dy2atnzO70PIWRifje2-1gHd2SLBC7qu17kn8f6fTmEbUo3RvXZxqzAqKyF1rL2ztAEtAGkiGOYhZCoNC27v7m-gJyP4vQ2GSQbw4gaa5fEFCojTmBtTN6L1tCa5kXk7_L2rwyu3ASHV7jk7Wu4QAygHDqAmcDfeY63Lvtldm79eQ4z1ksY1AqHpsCvx0vaUU-U29UQIFpV_stwU97a3ehchWuhL1CmJvWBjsRV6ursdTQ16OrL8f0jLQyIi9nt2w9UC4EQcQWOIex4L9D3oq0siehYmXuLvnIHb1PPgRgEABdXrr_nqHLngMoTUGEcDqfO0F0N5I-KNpfCNEJdbjdtuYC3BUO2nbXQpv3NlxXvaJ4KJD7Y17xvqGsgZEUCAor_2D_mYO6fq35_R-IkT1AHI8nEc_9nz-MUPOuApcX61Ye8JAB8bcp2V0Oo2cv2_2-6Mu6eliJUGOZsHuM43yzUceg2vQV-nouQXStk3aSBvaMMY0tOxwmBemwUBms8Xo2-c6zuDyyBzg3e-AEAXAoBz8nu2B2uqGYQnon-nmO-aoe-HefO1Qr0_mQIz-mur-BO6QeWiKmGZOTBD-s2AAct5KQOVLITCvId7sBqID2HdO3rtqOHwhRA4F7HoY6KdoYYiDkBhtqHAdPnPi7ofssFIASkttypDrVm_tJGECoD6M1qoa1l2owZgKskAUujtFobAGpnXO5BIH4JAdbldGoPluwpLiIAgSHkbpod5IdoLPYTQenEoX7inmoTciGIgTNq7hKl5LABAb4fWvXiPgofIF6CAFAMzmYSVhYdUEmgAF4kD8DNG2E_IGE4HpAPqyRIp36xbmE8SZ78DV7MpTFYEN6BFITLRLRJLhHRRtY1FgorAeTwY8E7E24eJcgYbeiB6vp1EFEkEo6rAXGuA1R04rYBFdFyB9jKpDADENGd6yCiZgCeDvEpBwC_pJCYH6G8F_H4E37hzs5mJREQAxGFGrFfqniYoCwInXGZRrgFqEHFb2TB7TbMG9qpbiA94cHBDlTgBXGdFr71a5QyTVHklBiUn76vGU6CauA0BAitEiIx7D6_EOHyAFjKCKDf6zqKah6P7jSK5cAwLBDibfF45MJSlyDXQ5RhDykz4iFKmzbLDgAEgvJjFR5wmOaEmsmzHdFohqB6jAmmmu4Jpew5JbHUF8HdGYyGloknHcnYmglUDbIDrGCuAW5-FyGIlsmshLRTpT7_5z5nHhmRn8AvLeyUGOa-knK9C3C6gYYt5O4hnz7GyDInhZkcF4kvwxntH2mSnlGshZQ5CzII4RHlnpmo51mwCbzbxEC7z7wNkhZxnXEJkaiKCyRf5lnHHc78hCgADcaA4g1Yr8XsSALor8sAtWHAAAHrALIMEppH8G7IBBAMsJpDUDUFZlZv3lZlwFZq9H8MsAmhwVZhoVwKeQAJoQBuxWYAAaxCV5GhCYNA1OB5R5leY8z8FABgiR1YNAZAVcVcp40gJgEgtw5Gi-QI4AhgAAdNIOVGhdIO4FXECPgGQnaKmiQPuXvF7FXAmFBYibcF7LAFwKwGMYcJ6A6GouVGaJQM_M3Kun3CIBBVyCxdcfxYJcJQtrkXoBJdme4LIAhbAEhShaRWAJheINhZimYHhWAIRcRVpeRZRdRSmoIPRZ5ExYAZgECCBOAQHHwIdLIBBfgFyJXIPhCDAPABQL5SABCCeI9pepYIoH3pQBkDkAAKSUBCgQjUXQUY4XYjRQAQicDVhrDkTIWUxsWiChVUADrPxXrSAKV4CCCDL8A5V8lYCgrHBgCKCyBhAxVGQ3AMyxUr4zGYBcjSAsqhJQA6QUDagvpJCuCxj8A6l4BpYwmyDwD4BoGvx9ZEFpn1WNVUDtWtWyBZCKAdXHBjXjGTWYAyWyAgTlQIVznLH8nWANVbU7WbVUBZDai7WjUgDjWHUQDViAjsCsBeyyAVwtGfywnWDVi9GPbzUUC6j7jkSCDNwUC3ANBAgjVn7xl4A9VgB9WfyDUQC6jLWpkLl9RaBLlAA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 120%; width: 100%"></div>
+
+
+<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+
+<script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+
+    var data = [
+        {
+            name: '不\n良\n贷\n款\n控\n制\n\n1',
+            itemStyle: {
+                color: 'rgba(239,19,19,0.89)'
+            },
+            children: [
+                {
+                    name: '个人不良贷款 1',
+                    value: 1,
+                    itemStyle: {
+                        color: 'rgba(224,30,30,0.89)'
+                    },
+                },
+
+            ]
+        },
+        {
+            name: '财\n富\n管\n理\n\n20',
+            itemStyle: {
+                color: 'rgba(218,95,29,0.84)'
+            },
+            children: [
+                {
+                    name: '零售渠道理财日均 20 ',
+                    value: 20,
+                    itemStyle: {
+                        color: 'rgb(218,95,29)'
+                    },
+                },
+            ]
+        },
+        {
+            name: '规模 146 ',
+            itemStyle: {
+                color: '#ebb40f'
+            },
+            children: [
+                {
+                    name: '个贷规模增长 32 ',
+                    value: 32,
+                    itemStyle: {
+                        color: '#f6c126'
+                    },
+                },
+                {
+                    name: '零售管理资产增长 44 ',
+                    value: 44,
+                    itemStyle: {
+                        color: '#efc444'
+                    }
+                },
+                {
+                    name: ' 62 个人存款增长',
+                    value: 62,
+                    itemStyle: {
+                        color: '#f3d98c'
+                    },
+                }
+            ]
+        },
+        {
+            name: '客\n户\n规\n模\n\n8',
+            itemStyle: {
+                color: '#567a18'
+            },
+            children: [
+                {
+                    name: ' 8 客户数',
+                    value: 8,
+                    itemStyle: {
+                        color: '#a2b029'
+                    }
+                },
+            ]
+        },
+        {
+            name: '客户获取 131 ',
+            itemStyle: {
+                color: '#0ab532'
+            },
+            children: [
+                {
+                    name: ' 125 代发业务推动',
+                    value: 125,
+                    itemStyle: {
+                        color: 'rgb(104,246,135)'
+                    },
+                },
+                {
+                    name: ' 3 信用卡新增客户',
+                    value: 3,
+                    itemStyle: {
+                        color: '#1be149'
+                    },
+                },
+                {
+                    name: ' 3 新增激活借记客户（全口径）',
+                    value: 3,
+                    itemStyle: {
+                        color: '#38ec62'
+                    },
+                }
+            ]
+        },
+        {
+            name: '客\n户\n增\n长\n\n32',
+            itemStyle: {
+                color: '#30c972'
+            },
+            children: [
+                {
+                    name: ' 10 富裕客户增长',
+                    value: 10,
+                    itemStyle: {
+                        color: '#43f18e'
+                    }
+                },
+                {
+                    name: ' 10 贵宾客户增长',
+                    value: 10,
+                    itemStyle: {
+                        color: '#97eebc'
+                    }
+                },
+                {
+                    name: ' 12 私人银行客户增长',
+                    value: 12,
+                    itemStyle: {
+                        color: '#ccf1dc'
+                    },
+                },
+            ]
+        },
+        {
+            name: '零\n售\n客\n户\n拓\n展\n\n6',
+            itemStyle: {
+                color: '#2188ad'
+            },
+            children: [
+                {
+                    name: ' 3 新增激活借记客户数',
+                    value: 3,
+                    itemStyle: {
+                        color: '#07a5de'
+                    }
+                },
+                {
+                    name: ' 3 信用卡新增客户',
+                    value: 3,
+                    itemStyle: {
+                        color: '#44b8e1'
+                    }
+                },
+            ]
+        },
+        {
+            name: '普\n惠\n金\n融\n\n8',
+            itemStyle: {
+                color: '#647fa8'
+            },
+            children: [
+                {
+                    name: ' 4 普惠型个人贷款',
+                    value: 4,
+                    itemStyle: {
+                        color: '#5a8ede'
+                    },
+                },
+                {
+                    name: ' 2 涉农个人贷款',
+                    value: 2,
+                    itemStyle: {
+                        color: '#86a9e0'
+                    },
+                },
+                {
+                    name: ' 2 普惠型个人贷款',
+                    value: 2,
+                    itemStyle: {
+                        color: '#c8d7ef'
+                    },
+                }
+            ]
+        },
+        {
+            name: '效\n益\n\n33 ',
+            itemStyle: {
+                color: '#6532e6'
+            },
+            children: [
+                {
+                    name: ' 20 零售板块营业净收入',
+                    value: 20,
+                    itemStyle: {
+                        color: '#8255f3'
+                    }
+                },
+                {
+                    name: ' 13 零售轻资本业务收入',
+                    value: 13,
+                    itemStyle: {
+                        color: '#a689f1'
+                    }
+                },
+            ]
+        },
+        {
+            name: '重\n点\n领\n域\n信\n贷\n支\n持\n\n4',
+            itemStyle: {
+                color: '#b932e6'
+            },
+            children: [
+                {
+                    name: ' 4 个人消费贷款',
+                    value: 20,
+                    itemStyle: {
+                        color: '#d575f5'
+                    }
+                },
+            ]
+        },
+        {
+            name: '新客户\n“五主”\n基础\n动作\n\n31',
+            itemStyle: {
+                color: 'rgba(230,50,146,0.84)'
+            },
+            children: [
+                {
+                    name: ' 3 网申信用卡进店核验客户贷发借转化率',
+                    value: 3,
+                    itemStyle: {
+                        color: 'rgba(243,76,165,0.84)'
+                    }
+                },
+                {
+                    name: ' 21 新客户“一户六开两推”',
+                    value: 21,
+                    itemStyle: {
+                        color: 'rgba(245,128,190,0.84)'
+                    }
+                },
+                {
+                    name: ' 7 信用卡新客户“一户三绑”',
+                    value: 7,
+                    itemStyle: {
+                        color: 'rgba(243,162,205,0.84)'
+                    }
+                },
+            ]
+        },
+        {
+            name: '全客户“五主”\n综合经营\n\n111',
+            itemStyle: {
+                color: '#e63253'
+            },
+            children: [
+                {
+                    name: '主服务客户增长 9 ',
+                    itemStyle: {
+                        color: '#f65271'
+                    },
+                    children: [
+                        {
+                            name: ' 3 电子渠道活跃率',
+                            value: 3,
+                            itemStyle: {
+                                color: '#ee6a82'
+                            }
+                        },
+                        {
+                            name: ' 6 企业微信认证率',
+                            value: 6,
+                            itemStyle: {
+                                color: '#f19fae'
+                            }
+                        },
+                    ]
+                },
+                {
+                    name: '主结算客户增长 6 ',
+                    itemStyle: {
+                        color: '#c97d68'
+                    },
+                    children: [
+                        {
+                            name: ' 3 缴费通交易客户数',
+                            value: 3,
+                            itemStyle: {
+                                color: '#ea866a'
+                            }
+                        },
+                        {
+                            name: ' 3 移动支付月活跃合约数计划完成率',
+                            value: 3,
+                            itemStyle: {
+                                color: '#ee9d86'
+                            }
+                        },
+                    ]
+                },
+                {
+                    name: '主融资客户增长 36 ',
+                    itemStyle: {
+                        color: '#bd5d5b'
+                    },
+                    children: [
+                        {
+                            name: ' 3 车贷抵押登记完成率',
+                            value: 3,
+                            itemStyle: {
+                                color: '#d95956'
+                            }
+                        },
+                        {
+                            name: ' 3 车贷渠道活跃度',
+                            value: 3,
+                            itemStyle: {
+                                color: '#ea7775'
+                            }
+                        },
+                        {
+                            name: ' 3 房抵客户信用贷触达率',
+                            value: 3,
+                            itemStyle: {
+                                color: '#e77e7c'
+                            }
+                        },
+                        {
+                            name: ' 12 分层客户信用卡及借贷关联',
+                            value: 12,
+                            itemStyle: {
+                                color: '#eaa09f'
+                            }
+                        },
+                        {
+                            name: ' 6 个贷客户转化',
+                            value: 6,
+                            itemStyle: {
+                                color: '#efbab9'
+                            }
+                        },
+                        {
+                            name: ' 6 信用贷获客能力',
+                            value: 6,
+                            itemStyle: {
+                                color: '#efd0cf'
+                            }
+                        },
+                    ]
+                },
+                {
+                    name: '主投资客户增长 60 ',
+                    value: 60,
+                    itemStyle: {
+                        color: '#a24049'
+                    },
+                    // children: [
+                    //     {
+                    //         name: ' 23 代理业务销售',
+                    //         value: 23,
+                    //         itemStyle: {
+                    //             color: '#e34d5a'
+                    //         }
+                    //     },
+                    //     {
+                    //         name: ' 20 富裕客户交叉覆盖',
+                    //         value: 20,
+                    //         itemStyle: {
+                    //             color: '#e55e6a'
+                    //         }
+                    //     },
+                    //     {
+                    //         name: ' 10 贵宾客户资产配置',
+                    //         value: 10,
+                    //         itemStyle: {
+                    //             color: '#e16d77'
+                    //         }
+                    //     },
+                    //     {
+                    //         name: ' 11 私人银行客户资产配置',
+                    //         value: 11,
+                    //         itemStyle: {
+                    //             color: '#e17f88'
+                    //         }
+                    //     },
+                    //     {
+                    //         name: ' 6 养老金账户',
+                    //         value: 6,
+                    //         itemStyle: {
+                    //             color: '#e0989e'
+                    //         }
+                    //     },
+                    // ]
+                },
+            ]
+        }
+    ];
+    option = {
+        // title: {
+        //     // text: 'WORLD COFFEE RESEARCH SENSORY LEXICON',
+        //     // subtext: 'Source: https://worldcoffeeresearch.org/work/sensory-lexicon/',
+        //     textStyle: {
+        //         fontSize: 14,
+        //         align: 'center'
+        //     },
+        //     subtextStyle: {
+        //         align: 'center'
+        //     },
+        //     // sublink: 'https://worldcoffeeresearch.org/work/sensory-lexicon/'
+        // },
+        series: {
+            type: 'sunburst',
+            data: data,
+            radius: [0, '80%'],
+            sort: undefined,
+            emphasis: {
+                focus: 'ancestor'
+            },
+            levels: [
+                {},
+                {
+                    r0: '5%',
+                    r: '40%',
+                    itemStyle: {
+                        borderWidth: 2
+                    },
+                    label: {
+                        rotate: 'tangential'
+                    }
+                },
+                {
+                    r0: '40%',
+                    r: '90%',
+                    label: {
+                        align: 'right'
+                    }
+                },
+                {
+                    r0: '90%',
+                    r: '92%',
+                    label: {
+                        position: 'outside',
+                        padding: 3,
+                        silent: false
+                    },
+                    itemStyle: {
+                        borderWidth: 3
+                    }
+                }
+            ]
+        }
+    };
+
+    if (option && typeof option === 'object') {
+        myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+</script>
+</body>
+</html>
