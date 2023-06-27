@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DailyTest/WeChatSport/WeChatSport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/WeChatSport/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +41,8 @@
     "dart.analysis.tool.window.visible": "false",
     "last_opened_file_path": "/Users/tianlong/PycharmProjects/GV_GitLab/personal_tianlong_server/DailyScipts/DailyTest/Echarts_JS",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs"
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "/Applications/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -217,7 +214,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/DailyTest/Echarts_JS/tree-basic.html</url>
           <line>45</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
