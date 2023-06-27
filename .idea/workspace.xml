@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/HierarchicalDisplay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/csv_read.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/dataset-link.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/ori_data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/output.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/raw_data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/raw_data_2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/sunburst-drink.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/target_dict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/tree-basic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/tree-radial.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/Echarts_JS/tree-vertical.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/book_reading/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/book_reading/book_reading_audio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/book_reading/book_reading_word.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/book_reading/chapter_list_local.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/book_reading/mult_run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/book_reading/name_list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/book_reading/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/WeChatSport/WeChatSport.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/WeChatSport/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +141,7 @@
       <workItem from="1685091683452" duration="12353000" />
       <workItem from="1685260944241" duration="192000" />
       <workItem from="1685261158704" duration="24983000" />
-      <workItem from="1685953962954" duration="23846000" />
+      <workItem from="1685953962954" duration="25168000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -194,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683708286019</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="upd">
+      <created>1686710222923</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686710222924</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
