@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/be7c92e8-47c3-475a-8877-a9c5bd21f6a8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/be7c92e8-47c3-475a-8877-a9c5bd21f6a8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RedBook/Dong/Cars/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RedBook/Dong/Cars/车载好物.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RedBook/Dong/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/WeChatSport/WeChatSport.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/WeChatSport/WeChatSport.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +76,7 @@
     "dart.analysis.tool.window.visible": "false",
     "last_opened_file_path": "/Users/tianlong/PycharmProjects/GV_GitLab/personal_tianlong_server/DailyScipts/DailyTest/Echarts_JS",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "ts.external.directory.path": "/Applications/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
   },
   "keyToStringList": {
@@ -167,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.WeChatSport" />
-        <item itemvalue="Python.csv_read" />
-        <item itemvalue="JavaScript Debug.tree-basic.html" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.csv_read" />
+        <item itemvalue="Python.WeChatSport" />
         <item itemvalue="JavaScript Debug.tree-radial.html" />
+        <item itemvalue="JavaScript Debug.tree-basic.html" />
       </list>
     </recent_temporary>
   </component>
@@ -190,6 +193,10 @@
       <workItem from="1685260944241" duration="192000" />
       <workItem from="1685261158704" duration="24983000" />
       <workItem from="1685953962954" duration="25168000" />
+      <workItem from="1688408019974" duration="134000" />
+      <workItem from="1688408172309" duration="100000" />
+      <workItem from="1688408328183" duration="370000" />
+      <workItem from="1688957153535" duration="6055000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
