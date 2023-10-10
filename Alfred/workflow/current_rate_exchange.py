@@ -11,7 +11,6 @@ if '!' in cur_str:
 	cur = cur_str.split('/')[0].strip()
 	amount = cur_str.split('/')[1].strip()
 	current_path = os.getcwd()
-	today_date_str = str(date.today())
 	file_name = 'Rates.txt'
 	rates_file_abspath = current_path + '/' + file_name
 
