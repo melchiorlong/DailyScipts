@@ -12,34 +12,43 @@ if '!' in cur_str:
 	amount = cur_str.split('/')[1].strip()
 	current_path = os.getcwd()
 	today_date_str = str(date.today())
-	file_name = 'Rates_' + today_date_str + '.txt'
-	temp_file_abspath = current_path + '/' + file_name
+	file_name = 'Rates.txt'
+	rates_file_abspath = current_path + '/' + file_name
 
 
 	def create_item(title, subtitle, icon, arg):
-		item = {}
-		item['title'] = title
-		item['subtitle'] = subtitle
-		item['icon'] = icon
-		item['arg'] = arg
+		item = {
+			'title': title,
+			'subtitle': subtitle,
+			'icon': icon,
+			'arg': arg
+		}
 		return item
 
 
-	def get_rates():
-		for dirpath, dirnames, filenames in os.walk(current_path):
-			if file_name in filenames:
-				with open(file=temp_file_abspath, mode='r', encoding='utf-8') as f:
-					raw_json = f.read()
-				json_map = json.loads(raw_json)
-				return json_map['conversion_rates']
+	def api_request():
+		currency_rate_api = 'https://v6.exchangerate-api.com/v6/767a1945568cb2d3c4685de0/latest/CNY'
+		return requests.get(currency_rate_api).text
 
-			else:
-				currency_rate_api = 'https://v6.exchangerate-api.com/v6/767a1945568cb2d3c4685de0/latest/CNY'
-				currency_json = requests.get(currency_rate_api).text
-				with open(file=temp_file_abspath, mode='w', encoding='utf-8') as f:
-					f.write(currency_json)
-				json_map = json.loads(currency_json)
-				return json_map['conversion_rates']
+
+	def get_rates():
+		for dir_path, dir_names, filenames in os.walk(current_path):
+			if file_name not in filenames or os.path.getsize(rates_file_abspath) == 0:
+				raw_json = api_request()
+				with open(file=rates_file_abspath, mode='w', encoding='utf-8') as f:
+					f.write(raw_json)
+				return json.loads(raw_json)['conversion_rates']
+
+			with open(file=rates_file_abspath, mode='r', encoding='utf-8') as f:
+				raw_json = f.read()
+				json_map = json.loads(raw_json)
+			if date.today() != date.fromtimestamp(json_map.get('time_last_update_unix')):
+				raw_json = api_request()
+				with open(file=rates_file_abspath, mode='w', encoding='utf-8') as f:
+					f.write(raw_json)
+				json_map = json.loads(raw_json)
+
+			return json_map['conversion_rates']
 
 
 	currency_map = get_rates()
