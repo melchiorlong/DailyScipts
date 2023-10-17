@@ -27,40 +27,39 @@ def avg_per_indicators():
 # 3.每个城市大于组内均值的指标，小于组内均值的指标；
 def inner_group_comparison():
 	df_temp = df
-	for col_name in df.columns:
-		if 'indicator' in col_name:
-			res = df.groupby('group')[col_name].mean()
-			df_temp = pd.merge(df_temp, res, on=['group'])
+
+	def get_group_avg_df():
+		res_df = pd.DataFrame()
+		for col_name in df.columns:
+			if 'indicator' in col_name:
+				res = df_temp.groupby('group')[col_name].mean()
+				res_df.insert(0, col_name, res)
+		return res_df
+
+	group_avg_df = get_group_avg_df()
 
 	res_less_list = []
 	res_greater_list = []
 	for index, row in df_temp.iterrows():
 		city = row['city']
+		group = row['group']
 		less_list = []
 		less_dict = {}
 		greater_list = []
 		greater_dict = {}
 
 		for col in df.columns[2:]:
-			# if row[col] > group_means.loc[group, col]:
-			# 	print(f"{col} 大于 组{group} 的均值")
-			# elif row[col] < group_means.loc[group, col]:
-			# 	print(f"{col} 小于 组{group} 的均值")
-			print(col)
+			if row[col] >= group_avg_df.loc[group, col]:
+				greater_list.append(col)
+				greater_dict[city] = greater_list
+				res_greater_list.append(greater_dict)
+			elif row[col] < group_avg_df.loc[group, col]:
+				less_list.append(col)
+				less_dict[city] = less_list
+				res_less_list.append(less_dict)
 
-
-		less_list.append('indicator_1_x') if row['indicator_1_x'] <= row['indicator_1_y'] else greater_list.append('indicator_1_x')
-		less_list.append('indicator_2_x') if row['indicator_2_x'] <= row['indicator_2_y'] else greater_list.append('indicator_2_x')
-		less_list.append('indicator_3_x') if row['indicator_3_x'] <= row['indicator_3_y'] else greater_list.append('indicator_3_x')
-		less_list.append('indicator_4_x') if row['indicator_4_x'] <= row['indicator_4_y'] else greater_list.append('indicator_4_x')
-		less_list.append('indicator_5_x') if row['indicator_5_x'] <= row['indicator_5_y'] else greater_list.append('indicator_5_x')
-		less_dict[city] = less_list
-		greater_dict[city] = greater_list
-		res_less_list.append(less_dict)
-		res_greater_list.append(greater_dict)
-
-	print(res_less_list)
-	print(res_greater_list)
+	print("大于等于组内均值" + str(res_greater_list))
+	print("小于组内均值" + str(res_less_list))
 
 
 # 4.每个城市大于全行均值的指标，小于全行均值的指标
@@ -99,31 +98,5 @@ def full_scope_comparison():
 	print(res_less_list)
 	print(res_greater_list)
 
-# def fun_1():
-#
-# 	# 计算每个组的均值
-# 	group_means = df.groupby('group').mean()
-#
-# 	result = []
-#
-# 	# 找出每个城市中哪些指标大于或小于组内均值
-# 	for index, row in df.iterrows():
-# 		city = row['city']
-# 		group = row['group']
-#
-# 		above_mean = [col for col in df.columns[3:] if row[col] > group_means.loc[group, col]]
-# 		below_mean = [col for col in df.columns[3:] if row[col] < group_means.loc[group, col]]
-#
-# 		result.append({
-# 			'城市': city,
-# 			'大于组内均值的指标': above_mean,
-# 			'小于组内均值的指标': below_mean,
-# 		})
-#
-# 	result_df = pd.DataFrame(result)
-# 	print(result_df)
 
-
-# inner_group_comparison()
-# fun_1()
 inner_group_comparison()
