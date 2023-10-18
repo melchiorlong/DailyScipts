@@ -1,15 +1,17 @@
 import os
 import sys
 from datetime import date
+import re
 
 import requests
 import json
 
 cur_str = sys.argv[1]
-if '!' in cur_str:
-	cur_str = cur_str.replace('!', '')
-	cur = cur_str.split('/')[0].strip()
-	amount = cur_str.split('/')[1].strip()
+if '~' in cur_str:
+
+	amount = re.findall(r"\d+\.?\d*", cur_str)[0]
+	cur = re.findall(r'[a-zA-Z]+', cur_str)[0]
+
 	current_path = os.getcwd()
 	file_name = 'Rates.txt'
 	rates_file_abspath = current_path + '/' + file_name
