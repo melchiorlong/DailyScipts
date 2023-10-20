@@ -1,3 +1,15 @@
-l = [1,2,3,4,5,6,7,1,2,3]
+import pandas as pd
 
-print([i for i, x in enumerate(l) if x == 1])
+df = pd.read_excel('/Users/tianlong/Downloads/data_template.xlsx', index_col=0)
+# print(df.loc['beijing', 'group'])
+
+df.index.name = '城市'
+
+for i in df.index:
+	print(i)
+
+# print(df.index)
+
+# template = df['city'] == '上海'
+# group_ser = df.loc[template]['group']
+# print(group_ser)
