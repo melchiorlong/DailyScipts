@@ -218,12 +218,12 @@ def columns_calc():
 					if row['ans'] == 'j' and row['Slide3.RESP'] == 'j':
 						ans_slide3_resp_j_count += 1
 						slide3_rt_list.append(row['Slide3.RT'])
-					if row['ans'] is None and row['Slide3.RESP'] is None:
+					if type(row['ans']) == float and pd.isna(row['ans']) and type(row['Slide3.RESP']) == float and pd.isna(row['Slide3.RESP']):
 						ans_slide3_resp_none_count += 1
 					if row['ans'] == 'j' and row['Slide4.RESP'] == 'j':
 						ans_slide4_resp_j_count += 1
 						slide4_rt_list.append(row['Slide4.RT'])
-					if row['ans'] is None and row['Slide4.RESP'] is None:
+					if type(row['ans']) == float and pd.isna(row['ans']) and type(row['Slide4.RESP']) == float and pd.isna(row['Slide4.RESP']):
 						ans_slide4_resp_none_count += 1
 				p1_hit_rate = ans_slide3_resp_j_count * 1.0 / 20
 				p1_rejection_rate = ans_slide3_resp_none_count * 1.0 / 20
