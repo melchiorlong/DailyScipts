@@ -212,8 +212,8 @@ def columns_calc():
 				ans_slide3_resp_none_count = 0
 				ans_slide4_resp_j_count = 0
 				ans_slide4_resp_none_count = 0
-				slide3_rt_list =[]
-				slide4_rt_list =[]
+				slide3_rt_list = []
+				slide4_rt_list = []
 				for index, row in df.iterrows():
 					if row['ans'] == 'j' and row['Slide3.RESP'] == 'j':
 						ans_slide3_resp_j_count += 1
@@ -231,23 +231,11 @@ def columns_calc():
 				p2_rejection_rate = ans_slide4_resp_none_count * 1.0 / 20
 				slide3_rt_list_int = list(map(lambda x: int(x), slide3_rt_list))
 				slide4_rt_list_int = list(map(lambda x: int(x), slide4_rt_list))
-				p1_correct_reaction_avg = sum(slide3_rt_list_int) / len(slide3_rt_list_int) if len(slide3_rt_list_int) else None
-				p2_correct_reaction_avg = sum(slide4_rt_list_int) / len(slide4_rt_list_int) if len(slide4_rt_list_int) else None
+				p1_correct_reaction_avg = sum(slide3_rt_list_int) / len(slide3_rt_list_int) if len(
+					slide3_rt_list_int) else None
+				p2_correct_reaction_avg = sum(slide4_rt_list_int) / len(slide4_rt_list_int) if len(
+					slide4_rt_list_int) else None
 
-
-			# def j_count(columns: list):
-			# 	fac_count = 0
-			# 	for fac in columns:
-			# 		if fac == 'j':
-			# 			fac_count += 1
-			# 	return fac_count *1.0 / 20
-			#
-			# ans_count = j_count(df['ans'])
-			# slide3_cresp_count = j_count(df['Slide3.CRESP'])
-			# slide3_resp_count = j_count(df['Slide3.RESP'])
-			# slide4_cresp_count = j_count(df['Slide4.CRESP'])
-			# slide4_resp_count = j_count(df['Slide4.RESP'])
-			#
 				dict_1 = {
 					file_name: {
 						'P1击中个数': ans_slide3_resp_j_count,
@@ -278,6 +266,7 @@ def result_write(result_list: list):
 			res_date_frame = pd.concat([res_date_frame, df], ignore_index=True)
 	res_file_name = '/Users/tianlong/Downloads/result.xlsx'
 	res_date_frame.to_excel(res_file_name, index=False, engine='openpyxl')
+
 
 res = columns_calc()
 result_write(res)
