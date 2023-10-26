@@ -281,7 +281,7 @@ def result_write(result_list: list):
 		for file_name, res_dict in file_res.items():
 			data = {}
 			for fac_name, fac_count in res_dict.items():
-				data['file_name'] = [file_name]
+				data['序号'] = [file_name.replace('.xlsx', '')]
 				data[fac_name] = [fac_count]
 			df = pd.DataFrame(data)
 			res_date_frame = pd.concat([res_date_frame, df], ignore_index=True)
