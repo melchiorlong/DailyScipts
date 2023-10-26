@@ -360,7 +360,7 @@
       <workItem from="1696755844047" duration="56000" />
       <workItem from="1696755925677" duration="818000" />
       <workItem from="1696757309600" duration="242000" />
-      <workItem from="1696757584280" duration="75701000" />
+      <workItem from="1696757584280" duration="81388000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -544,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698201227392</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="upd">
+      <option name="closed" value="true" />
+      <created>1698203383229</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1698203383229</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,6 +593,11 @@
           <line>21</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DailyTest/excel_test/test4.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/DailyTest/Echarts_JS/tree-basic.html</url>
           <line>45</line>
@@ -602,7 +615,7 @@
     <SUITE FILE_PATH="coverage/DailyScipts$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1697593741389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/dateutil_test" />
     <SUITE FILE_PATH="coverage/DailyScipts$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1697596715316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$current_rate_exchange_new.coverage" NAME="current_rate_exchange_new Coverage Results" MODIFIED="1696839889084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WorkingPlanAndOthers/2022/07" />
-    <SUITE FILE_PATH="coverage/DailyScipts$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1698200039628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
+    <SUITE FILE_PATH="coverage/DailyScipts$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1698285497049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
     <SUITE FILE_PATH="coverage/DailyScipts$task_run.coverage" NAME="task_run Coverage Results" MODIFIED="1691392532476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Multiplication_table" />
     <SUITE FILE_PATH="coverage/DailyScipts$calc.coverage" NAME="calc Coverage Results" MODIFIED="1677638552319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest" />
     <SUITE FILE_PATH="coverage/DailyScipts$current_rate_exchange__1_.coverage" NAME="current_rate_exchange Coverage Results" MODIFIED="1696984814368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
@@ -611,7 +624,7 @@
     <SUITE FILE_PATH="coverage/DailyScipts$tets.coverage" NAME="tets Coverage Results" MODIFIED="1696846337119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$current_rate_exchange.coverage" NAME="current_rate_exchange Coverage Results" MODIFIED="1697598236985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$test1__2_.coverage" NAME="test1 (2) Coverage Results" MODIFIED="1697533724247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
-    <SUITE FILE_PATH="coverage/DailyScipts$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1698202341383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
+    <SUITE FILE_PATH="coverage/DailyScipts$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1698301639637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
     <SUITE FILE_PATH="coverage/DailyScipts$book_reading.coverage" NAME="book_reading Coverage Results" MODIFIED="1685261281479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/book_reading" />
     <SUITE FILE_PATH="coverage/DailyScipts$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1696834986544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WorkingPlanAndOthers/2022/07" />
     <SUITE FILE_PATH="coverage/DailyScipts$mult_run.coverage" NAME="mult_run Coverage Results" MODIFIED="1685431682199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/book_reading" />

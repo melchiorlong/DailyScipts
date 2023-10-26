@@ -3,7 +3,7 @@ import os
 
 file_path = '/Users/tianlong/Downloads/excel2/'
 # file_path = '/Users/tianlong/Downloads/folder1/'
-file_new_path = '/Users/tianlong/Downloads/folder3/'
+file_new_path = '/Users/tianlong/Downloads/folder4/'
 
 delete_columns_1 = [
 	'ExperimentName',
@@ -190,7 +190,7 @@ def excel_columns_operate(operation: str, column_list: list):
 	for dir_path, dir_names, filenames in os.walk(file_path):
 		for file_name in filenames:
 			if 'xls' in file_name:
-				df = pd.read_excel(file_path + file_name, header=0)
+				df = pd.read_excel(file_path + file_name, header=0, keep_default_na=False)
 				if operation == 'delete':
 					df.drop(column_list, axis=1, inplace=True)
 				elif operation == 'reserve':
@@ -207,28 +207,44 @@ def columns_calc():
 	for dir_path, dir_names, filenames in os.walk(file_new_path):
 		for file_name in filenames:
 			if 'xlsx' in file_name and '~' not in file_name:
-				df = pd.read_excel(file_new_path + file_name, header=0)
-				ans_slide3_resp_j_count = 0
-				ans_slide3_resp_none_count = 0
-				ans_slide4_resp_j_count = 0
-				ans_slide4_resp_none_count = 0
+				df = pd.read_excel(file_new_path + file_name, header=0, keep_default_na=False)
+				p1_j_count = 0
+				p2_j_count = 0
+				p1_non_j_count = 0
+				p2_non_j_count = 0
+				p1_correctly_negates_number = 0
+				p2_correctly_negates_number = 0
+				p1_hit_count = 0
+				p2_hit_count = 0
 				slide3_rt_list = []
 				slide4_rt_list = []
 				for index, row in df.iterrows():
-					if row['ans'] == 'j' and row['Slide3.RESP'] == 'j':
-						ans_slide3_resp_j_count += 1
-						slide3_rt_list.append(row['Slide3.RT'])
-					if type(row['ans']) == float and pd.isna(row['ans']) and type(row['Slide3.RESP']) == float and pd.isna(row['Slide3.RESP']):
-						ans_slide3_resp_none_count += 1
-					if row['ans'] == 'j' and row['Slide4.RESP'] == 'j':
-						ans_slide4_resp_j_count += 1
-						slide4_rt_list.append(row['Slide4.RT'])
-					if type(row['ans']) == float and pd.isna(row['ans']) and type(row['Slide4.RESP']) == float and pd.isna(row['Slide4.RESP']):
-						ans_slide4_resp_none_count += 1
-				p1_hit_rate = ans_slide3_resp_j_count * 1.0 / 20
-				p1_rejection_rate = ans_slide3_resp_none_count * 1.0 / 20
-				p2_hit_rate = ans_slide4_resp_j_count * 1.0 / 20
-				p2_rejection_rate = ans_slide4_resp_none_count * 1.0 / 20
+					if 41 <= row['Block'] <= 80:
+						if row['ans'] == 'j':
+							p1_j_count += 1
+						if row['ans'] == '':
+							p1_non_j_count += 1
+						if row['Slide3.ACC'] == 1 and row['Slide3.RESP'] == 'j':
+							p1_hit_count += 1
+							slide3_rt_list.append(row['Slide3.RT'])
+						if row['Slide3.ACC'] == 1 and row['Slide3.RESP'] == '':
+							p1_correctly_negates_number += 1
+					elif 81 <= row['Block'] <= 119:
+						if row['ans'] == 'j':
+							p2_j_count += 1
+						if row['ans'] == '':
+							p2_non_j_count += 1
+						if row['Slide4.ACC'] == 1 and row['Slide4.RESP'] == 'j':
+							p2_hit_count += 1
+							slide4_rt_list.append(row['Slide4.RT'])
+						if row['Slide4.ACC'] == 1 and row['Slide4.RESP'] == '':
+							p2_correctly_negates_number += 1
+
+
+				p1_hit_rate = p2_hit_count * 1.0 / p2_j_count
+				p2_hit_rate = p2_hit_count * 1.0 / p2_j_count
+				p1_rejection_rate = p1_correctly_negates_number * 1.0 / p1_non_j_count
+				p2_rejection_rate = p2_correctly_negates_number * 1.0 / p2_non_j_count
 				slide3_rt_list_int = list(map(lambda x: int(x), slide3_rt_list))
 				slide4_rt_list_int = list(map(lambda x: int(x), slide4_rt_list))
 				p1_correct_reaction_avg = sum(slide3_rt_list_int) / len(slide3_rt_list_int) if len(
@@ -238,13 +254,18 @@ def columns_calc():
 
 				dict_1 = {
 					file_name: {
-						'P1击中个数': ans_slide3_resp_j_count,
-						'P1正确否定个数': ans_slide3_resp_none_count,
+						'P1要求反应个数': p1_j_count,
+						'P1要求否定个数': p1_non_j_count,
+						'P1击中个数': p1_hit_count,
+						'P1正确否定个数': p1_correctly_negates_number,
 						'P1命中率': p1_hit_rate,
 						'P1否定率': p1_rejection_rate,
 						'P1正确反应时': p1_correct_reaction_avg,
-						'P2击中个数': ans_slide4_resp_j_count,
-						'P2正确否定个数': ans_slide4_resp_none_count,
+
+						'P2要求反应个数': p2_j_count,
+						'P2要求否定个数': p2_non_j_count,
+						'P2击中个数': p2_hit_count,
+						'P2正确否定个数': p2_correctly_negates_number,
 						'P2命中率': p2_hit_rate,
 						'P2否定率': p2_rejection_rate,
 						'P2正确反应时': p2_correct_reaction_avg,
@@ -259,15 +280,15 @@ def result_write(result_list: list):
 	for file_res in result_list:
 		for file_name, res_dict in file_res.items():
 			data = {}
-			for j_name, j_count in res_dict.items():
+			for fac_name, fac_count in res_dict.items():
 				data['file_name'] = [file_name]
-				data[j_name] = [j_count]
+				data[fac_name] = [fac_count]
 			df = pd.DataFrame(data)
 			res_date_frame = pd.concat([res_date_frame, df], ignore_index=True)
 	res_file_name = '/Users/tianlong/Downloads/result.xlsx'
 	res_date_frame.to_excel(res_file_name, index=False, engine='openpyxl')
 
-
+# excel_columns_operate('reserve', reserve_columns)
 res = columns_calc()
 result_write(res)
 
