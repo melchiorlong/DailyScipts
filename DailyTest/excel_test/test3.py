@@ -2,7 +2,6 @@ import pandas as pd
 import os
 
 file_path = '/Users/tianlong/Downloads/excel2/'
-# file_path = '/Users/tianlong/Downloads/folder1/'
 file_new_path = '/Users/tianlong/Downloads/folder4/'
 
 delete_columns_1 = [
@@ -227,7 +226,7 @@ def columns_calc():
 						if row['Slide3.ACC'] == 1 and row['Slide3.RESP'] == 'j':
 							p1_hit_count += 1
 							slide3_rt_list.append(row['Slide3.RT'])
-						if row['Slide3.ACC'] == 1 and row['Slide3.RESP'] == '':
+						if row['Slide3.ACC'] == 0 and row['Slide3.RESP'] == 'j':
 							p1_correctly_negates_number += 1
 					elif 81 <= row['Block'] <= 119:
 						if row['ans'] == 'j':
@@ -237,7 +236,7 @@ def columns_calc():
 						if row['Slide4.ACC'] == 1 and row['Slide4.RESP'] == 'j':
 							p2_hit_count += 1
 							slide4_rt_list.append(row['Slide4.RT'])
-						if row['Slide4.ACC'] == 1 and row['Slide4.RESP'] == '':
+						if row['Slide4.ACC'] == 0 and row['Slide4.RESP'] == 'j':
 							p2_correctly_negates_number += 1
 
 
@@ -292,4 +291,3 @@ def result_write(result_list: list):
 res = columns_calc()
 result_write(res)
 
-# excel_columns_operate('reserve', reserve_columns)
