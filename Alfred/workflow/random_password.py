@@ -7,11 +7,7 @@ query = sys.argv[1]
 
 
 def create_item(title, subtitle, icon, arg):
-	item = {}
-	item['title'] = title
-	item['subtitle'] = subtitle
-	item['icon'] = icon
-	item['arg'] = arg
+	item = {'title': title, 'subtitle': subtitle, 'icon': icon, 'arg': arg}
 	return item
 
 
@@ -27,7 +23,6 @@ except ValueError:
 	items.append(
 		create_item('Invalid input', 'Please enter a positive integer', {'type': 'default', 'path': 'icon.png'}, ''))
 
-result = {}
-result['items'] = items
+result = {'items': items}
 
 print(json.dumps(result))

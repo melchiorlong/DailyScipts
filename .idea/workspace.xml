@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Alfred/workflow/random_password.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Alfred/workflow/string_conversion.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Alfred/workflow/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alfred/workflow/Rates.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Alfred/workflow/Rates.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/excel_test/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/excel_test/zhengyang_psychology_statistic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alfred/workflow/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,7 +357,7 @@
       <workItem from="1696755844047" duration="56000" />
       <workItem from="1696755925677" duration="818000" />
       <workItem from="1696757309600" duration="242000" />
-      <workItem from="1696757584280" duration="91405000" />
+      <workItem from="1696757584280" duration="92039000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -578,7 +573,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698370336449</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="upd">
+      <option name="closed" value="true" />
+      <created>1698396702566</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1698396702566</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,11 +627,6 @@
           <line>23</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Alfred/workflow/string_conversion.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/DailyTest/Echarts_JS/tree-basic.html</url>
           <line>45</line>
@@ -650,7 +648,7 @@
     <SUITE FILE_PATH="coverage/DailyScipts$task_run.coverage" NAME="task_run Coverage Results" MODIFIED="1691392532476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Multiplication_table" />
     <SUITE FILE_PATH="coverage/DailyScipts$calc.coverage" NAME="calc Coverage Results" MODIFIED="1677638552319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest" />
     <SUITE FILE_PATH="coverage/DailyScipts$current_rate_exchange__1_.coverage" NAME="current_rate_exchange Coverage Results" MODIFIED="1696984814368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
-    <SUITE FILE_PATH="coverage/DailyScipts$string_conversion.coverage" NAME="string_conversion Coverage Results" MODIFIED="1698396445492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
+    <SUITE FILE_PATH="coverage/DailyScipts$string_conversion.coverage" NAME="string_conversion Coverage Results" MODIFIED="1698396631470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$daxieyan_wenan.coverage" NAME="daxieyan_wenan Coverage Results" MODIFIED="1683597107134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/daily_script" />
     <SUITE FILE_PATH="coverage/DailyScipts$book_reading_word.coverage" NAME="book_reading_word Coverage Results" MODIFIED="1685411434500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/book_reading" />
     <SUITE FILE_PATH="coverage/DailyScipts$tets.coverage" NAME="tets Coverage Results" MODIFIED="1696846337119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
