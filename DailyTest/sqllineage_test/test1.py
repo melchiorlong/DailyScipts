@@ -1,17 +1,5 @@
 import re
-
-
-def extract_tables(sql):
-	# Matches table names in FROM and JOIN clauses
-	pattern = re.compile(r'\b(FROM|JOIN)\s+([\w\.]+)', re.I)
-
-	matches = pattern.findall(sql)
-
-	# Extract table names (they are in the second group of the match object)
-	tables = [match[1] for match in matches]
-
-	return tables
-
+from sqllineage.runner import LineageRunner
 
 # Replace with your actual SQL query
 sql = """
@@ -47,5 +35,11 @@ inner join psd_log pl on ct.placement_name = pl.placement_name and ct.bj_date = 
 order by pl.bj_date, pl.placement_name;
 """
 
-table_names = extract_tables(sql)
-print(table_names)
+res = LineageRunner(sql)
+cols = res.get_column_lineage(exclude_subquery=False)
+
+for fac in cols:
+    print(fac)
+
+
+
