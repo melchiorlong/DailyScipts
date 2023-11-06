@@ -23,7 +23,7 @@ def install_plugin_dependencies():
                 basereqs = os.path.join(basedir, "requirements.txt")
                 extracted = zfile.extract(basereqs, path=plugins_dir)
                 subprocess.check_call(
-                    [sys.executable, "-m", "pip", "install", "-r", extracted]
+                    [sys.executable, "-m", "pip_operation", "install", "-r", extracted]
                 )
                 os.remove(extracted)
                 os.rmdir(os.path.join(plugins_dir, basedir))

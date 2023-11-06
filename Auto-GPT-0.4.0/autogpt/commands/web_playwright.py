@@ -7,7 +7,7 @@ try:
     from playwright.sync_api import sync_playwright
 except ImportError:
     logger.info(
-        "Playwright not installed. Please install it with 'pip install playwright' to use."
+        "Playwright not installed. Please install it with 'pip_operation install playwright' to use."
     )
 from bs4 import BeautifulSoup
 

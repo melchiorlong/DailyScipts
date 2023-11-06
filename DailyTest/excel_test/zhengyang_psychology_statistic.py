@@ -196,7 +196,7 @@ def excel_columns_operate(operation: str, column_list: list):
                     df = df[column_list]
 
                 # df = df.fillna("NULL")
-                if 'x' not in file_name:
+                if not file_name.endswith('xlsx'):
                     new_file_name = file_new_path + file_name + 'x'
                 else:
                     new_file_name = file_new_path + file_name
@@ -204,7 +204,6 @@ def excel_columns_operate(operation: str, column_list: list):
 
 
 def columns_calc():
-    # fp = '/Users/tianlong/Downloads/folder2/'
     res_list = []
     for dir_path, dir_names, filenames in os.walk(file_new_path):
         for file_name in filenames:
@@ -290,6 +289,6 @@ def result_write(result_list: list):
     res_date_frame.to_excel(res_file_name, index=False, engine='openpyxl')
 
 
-excel_columns_operate('reserve', reserve_columns)
+# excel_columns_operate('reserve', reserve_columns)
 res = columns_calc()
 result_write(res)

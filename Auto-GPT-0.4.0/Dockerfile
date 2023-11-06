@@ -26,14 +26,14 @@ ENTRYPOINT ["python", "-m", "autogpt", "--install-plugin-deps"]
 
 # dev build -> include everything
 FROM autogpt-base as autogpt-dev
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip_operation install --no-cache-dir -r requirements.txt
 WORKDIR /app
 ONBUILD COPY . ./
 
 # release build -> include bare minimum
 FROM autogpt-base as autogpt-release
 RUN sed -i '/Items below this point will not be included in the Docker Image/,$d' requirements.txt && \
-	pip install --no-cache-dir -r requirements.txt
+	pip_operation install --no-cache-dir -r requirements.txt
 WORKDIR /app
 ONBUILD COPY autogpt/ ./autogpt
 ONBUILD COPY scripts/ ./scripts
