@@ -19,21 +19,26 @@ while rental_increase_rate <= 1.05:
     rental_month: float = 7590
     init_rental_year = 1
     revenue_sum = []
+    lianjia_revenue_sum = []
     while init_rental_year <= rental_year:
         month_sharing = rental_month * month_sharing_rates
         # （出租价格 × 出租率 - 保底）×分成比例 ×12个月
-
         us_profit_sharing = rental_month * (occupancy_rate - month_sharing_rates) * us_profit_sharing_year_rate
         if init_rental_year <= 5:
             revenue_month = month_sharing - management_fee - maintain_fee_month - repay_loan_month + us_profit_sharing
         else:
             revenue_month = month_sharing - management_fee - maintain_fee_month + us_profit_sharing
         revenue_sum.append(revenue_month * 12)
+        lianjia_revenue_sum.append(
+            (management_fee + maintain_fee_month + (rental_month * 0.2 - us_profit_sharing)) * 12)
         print('年涨幅为' + str(int((rental_increase_rate - 1) * 100)) + '%')
         print('第' + str(init_rental_year) + '年月均收益' + str(int(revenue_month)))
         print('第' + str(init_rental_year) + '年总收益' + str(int(revenue_month) * 12))
+
         print('总计收益' + str(int(sum(revenue_sum))))
+        print('链家总计收益' + str(int(sum(lianjia_revenue_sum))))
         print('总计月均收益' + str(int(sum(revenue_sum) / (init_rental_year * 12))))
+        print('链家总计月均收益' + str(int(sum(lianjia_revenue_sum) / (init_rental_year * 12))))
         print()
         init_rental_year += 1
         rental_month = rental_month * rental_increase_rate
