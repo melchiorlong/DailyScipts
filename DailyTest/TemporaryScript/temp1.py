@@ -3374,9 +3374,6 @@ print(sl)
 print(max(size_set))
 
 
-# 22244672
-# 11198288
-
 
 # hex = hex_str.encode('utf-8')
 # str_bin = binascii.unhexlify(hex)
