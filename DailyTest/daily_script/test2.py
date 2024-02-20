@@ -1,5 +1,9 @@
-import re
 
-s1 = '123嗷1嗷12'
+sample_list = []
 
-print(re.sub('^\d*', '', s1))
+for i in range(1,100):
+    sample_list.append(i)
+
+print(sample_list[:5])
+
+
