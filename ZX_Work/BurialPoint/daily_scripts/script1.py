@@ -19,3 +19,11 @@ template_id_instance_name_dict = {
     27420: ["城市服务", "cb-cube-v10-home-feature-business"],
     27422: ["出国金融", "cb-cube-v10-home-fea"],
 }
+
+for page_id, page_info in template_id_instance_name_dict.items():
+    # print('页面名称是: ' + page_info[0])
+    # print('模板类型是: ' + page_info[1])
+    # print("select * from show where page_id = " + str(page_id) + ';')
+    # print()
+    if 'feature-business' in page_info[1]:
+        print(page_info[0])
