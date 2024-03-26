@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
-      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/交接.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240321 周例会纪要.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/埋点规范/埋点需求文档v2.1.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/季度计划/2024Q2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/季度计划/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/script1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240326手工埋点.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240314周例会会议纪要.md" beforeDir="false" afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240314周例会会议纪要.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZX_Work/BurialPoint/交接.md" beforeDir="false" afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/交接.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240321 周例会纪要.md" beforeDir="false" afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240321 周例会纪要.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -416,7 +415,7 @@
       <workItem from="1706147403709" duration="3812000" />
       <workItem from="1708392663757" duration="18022000" />
       <workItem from="1709091339199" duration="84000" />
-      <workItem from="1709091456882" duration="42039000" />
+      <workItem from="1709091456882" duration="60571000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -784,7 +783,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710486077474</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="upd">
+      <option name="closed" value="true" />
+      <created>1710987286927</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1710987286927</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
