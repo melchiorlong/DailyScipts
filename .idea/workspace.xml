@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240328周例会会议纪要.md" beforeDir="false" afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240328周例会会议纪要.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -412,7 +413,7 @@
       <workItem from="1706147403709" duration="3812000" />
       <workItem from="1708392663757" duration="18022000" />
       <workItem from="1709091339199" duration="84000" />
-      <workItem from="1709091456882" duration="73910000" />
+      <workItem from="1709091456882" duration="80945000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -483,14 +484,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1691392566394</updated>
-    </task>
-    <task id="LOCAL-00013" summary="upd">
-      <option name="closed" value="true" />
-      <created>1696922429966</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1696922429966</updated>
     </task>
     <task id="LOCAL-00014" summary="upd">
       <option name="closed" value="true" />
@@ -796,7 +789,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711530437189</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="upd">
+      <option name="closed" value="true" />
+      <created>1711591229685</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1711591229685</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
