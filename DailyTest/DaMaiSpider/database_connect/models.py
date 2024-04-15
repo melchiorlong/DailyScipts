@@ -6,7 +6,6 @@ from sqlalchemy.orm.base import Mapped
 Base = declarative_base()
 metadata = Base.metadata
 
-
 t_damai_show_concert_spider_20240415 = Table(
     'damai_show_concert_spider_20240415', metadata,
     Column('create_time', DateTime),
@@ -16,4 +15,3 @@ t_damai_show_concert_spider_20240415 = Table(
     Column('show_price', String(255, 'utf8mb4_general_ci')),
     Column('show_actor', String(255, 'utf8mb4_general_ci'))
 )
-
