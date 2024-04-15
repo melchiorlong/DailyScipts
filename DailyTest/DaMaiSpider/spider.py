@@ -104,8 +104,8 @@ def database_writer(show_list):
             show_price=show_dict['price']
         )
         try:
-            with session.begin() as connection:  # 使用 begin() 自动处理事务提交和回滚
-                result = connection.execute(insert_stmt)
+            session.execute(insert_stmt)
+            session.commit()
         except SQLAlchemyError as e:
             print(f"An error occurred: {e}")
     MySQLConnect.session_close(session)
