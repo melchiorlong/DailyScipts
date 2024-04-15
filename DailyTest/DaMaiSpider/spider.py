@@ -6,6 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 import time
 
 
@@ -25,7 +26,7 @@ def spider(driver_instance):
         time.sleep(5)
         max_page = get_max_page(driver_instance)
         current_page = 1
-        while current_page < 2:
+        while current_page < max_page:
             parent_div = driver_instance.find_element(By.XPATH, '/html/body/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]')
             child_div = parent_div.find_elements(By.XPATH, './child::*')
 
