@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
+      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/埋点规范/App鸿蒙测试流程及标准.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/DaMaiSpider/LICENSE.chromedriver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/DaMaiSpider/chromedriver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/DaMaiSpider/spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/DaMaiSpider/spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/DaMaiSpider/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/DaMaiSpider/test1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -421,7 +418,7 @@
       <workItem from="1706147403709" duration="3812000" />
       <workItem from="1708392663757" duration="18022000" />
       <workItem from="1709091339199" duration="84000" />
-      <workItem from="1709091456882" duration="152605000" />
+      <workItem from="1709091456882" duration="158563000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -492,14 +489,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1691392566394</updated>
-    </task>
-    <task id="LOCAL-00024" summary="upd">
-      <option name="closed" value="true" />
-      <created>1698201227392</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1698201227392</updated>
     </task>
     <task id="LOCAL-00025" summary="upd">
       <option name="closed" value="true" />
@@ -805,7 +794,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713177475926</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="upd">
+      <option name="closed" value="true" />
+      <created>1713316238767</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1713316238767</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
