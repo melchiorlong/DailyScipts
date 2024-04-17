@@ -1,5 +1,3 @@
-num = 5
-i = 1
-while i < 5:
-    print(i)
-    i += 1
+from selenium import webdriver
+br = webdriver.Chrome()
+br.get('http://www.baidu.com')

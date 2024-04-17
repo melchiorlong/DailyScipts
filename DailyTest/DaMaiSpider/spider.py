@@ -16,10 +16,11 @@ import time
 
 def driver_init():
     # 设置 WebDriver
-    service = Service(ChromeDriverManager().install())
+    # service = Service(ChromeDriverManager().install())
     options = Options()
     options.headless = True
-    driver_instance = webdriver.Chrome(service=service)
+    # driver_instance = webdriver.Chrome(service=service)
+    driver_instance = webdriver.Chrome(options=options)
     return driver_instance
 
 
@@ -76,7 +77,7 @@ def get_max_page(driver_instance):
 def next_page(web_driver):
     wait = WebDriverWait(web_driver, 10)  # 最多等待10秒
     button = wait.until(EC.element_to_be_clickable(
-        (By.XPATH, '/html/body/div[2]/div[2]/div[1]/div[3]/div[2]/div[1]/button[2]')))  # 通过ID定位按钮，需要根据实际情况修改定位器
+        (By.XPATH, '/html/body/div[2]/div[2]/div[1]/div[3]/div[2]/div[1]/button[2]')))
     button.click()
     wait.until(EC.url_changes)
 
