@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
-      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240424周例会会议纪要.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要/20240509周例会会议纪要.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/埋点规范/关于提高对实际情况的数据表现响应速度建议.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/季度计划/202404月复盘会.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZX_Work/BurialPoint/埋点规范/App鸿蒙测试流程及标准.md" beforeDir="false" afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/埋点规范/App鸿蒙测试流程及标准.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,45 +86,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.MySQLConnect.executor": "Run",
-    "Python.ex_1 (1).executor": "Run",
-    "Python.ex_1.executor": "Run",
-    "Python.ex_2.executor": "Run",
-    "Python.ex_3.executor": "Debug",
-    "Python.ex_4.executor": "Debug",
-    "Python.nltk_ssl_dis_downloader.executor": "Run",
-    "Python.pic1.executor": "Run",
-    "Python.script1.executor": "Run",
-    "Python.service.executor": "Run",
-    "Python.spider.executor": "Run",
-    "Python.temp1.executor": "Debug",
-    "Python.test1.executor": "Run",
-    "Python.test2.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/tianlong/PycharmProjects/DailyScipts/DailyTest/DaMaiSpider",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "/Applications/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.MySQLConnect.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex_1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex_3.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.ex_4.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.nltk_ssl_dis_downloader.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pic1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.script1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.service.executor&quot;: &quot;Run&quot;,
+    &quot;Python.spider.executor&quot;: &quot;Run&quot;,
+    &quot;Python.temp1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tianlong/PycharmProjects/DailyScipts/DailyTest/DaMaiSpider&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="DailyScipts" is-module-sdk="true">
@@ -419,7 +420,12 @@
       <workItem from="1706147403709" duration="3812000" />
       <workItem from="1708392663757" duration="18022000" />
       <workItem from="1709091339199" duration="84000" />
-      <workItem from="1709091456882" duration="187100000" />
+      <workItem from="1709091456882" duration="189474000" />
+      <workItem from="1714270134345" duration="1677000" />
+      <workItem from="1714801103474" duration="30714000" />
+      <workItem from="1715045908965" duration="108000" />
+      <workItem from="1715046025940" duration="5285000" />
+      <workItem from="1716308934465" duration="141144000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -490,14 +496,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1691392566394</updated>
-    </task>
-    <task id="LOCAL-00031" summary="upd">
-      <option name="closed" value="true" />
-      <created>1698397487609</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1698397487609</updated>
     </task>
     <task id="LOCAL-00032" summary="upd">
       <option name="closed" value="true" />
@@ -803,7 +801,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713944183631</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="upd">
+      <option name="closed" value="true" />
+      <created>1714026975777</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1714026975777</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
