@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 logger = logging.getLogger(__name__)
 
 
-class GasolinePrice():
+class GetGasolinePrice():
     pass
 
     def __init__(self, region: str):
@@ -22,6 +22,7 @@ class GasolinePrice():
         header = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
         }
+
         try:
             response = request('GET', 'http://www.qiyoujiage.com/' + self._region + '.shtml', headers=header)
             response.encoding = 'utf-8'
