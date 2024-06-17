@@ -43,8 +43,3 @@ class GasolinePrice():
             gas_res["next_adjust"] = next_adjust
 
         return gas_res
-
-
-gp = GasolinePrice(region='beijing')
-res = gp.get_price()
-print(res)
