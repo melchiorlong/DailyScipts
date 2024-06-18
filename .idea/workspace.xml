@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
-      <change afterPath="$PROJECT_DIR$/DailyTest/GasolinePrice/test1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/GetGasolinePrice.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/GasolinePrice/GetGasolinePrice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/ProvinceCityPinyinConvert.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/GasolinePrice/ProvinceCityPinyinConvert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/task_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/GasolinePrice/task_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/GetGasolinePrice.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alfred/workflow/GasolinePrice/GetGasolinePrice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/ProvinceCityDicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alfred/workflow/GasolinePrice/ProvinceCityDicts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/ProvinceCityPinyinConvert.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alfred/workflow/GasolinePrice/ProvinceCityPinyinConvert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alfred/workflow/GasolinePrice/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/task_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alfred/workflow/GasolinePrice/task_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/GasolinePrice/test1.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +106,8 @@
     "Python.script1.executor": "Run",
     "Python.service.executor": "Run",
     "Python.spider.executor": "Run",
-    "Python.task_run.executor": "Run",
+    "Python.task_run (1).executor": "Run",
+    "Python.task_run.executor": "Debug",
     "Python.temp1.executor": "Debug",
     "Python.test1 (1).executor": "Run",
     "Python.test1.executor": "Run",
@@ -149,42 +152,14 @@
       <recent name="$PROJECT_DIR$/ZX_Work/BurialPoint/埋点规范" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Alfred/workflow" />
       <recent name="$PROJECT_DIR$/DailyTest/DaMaiSpider" />
       <recent name="$PROJECT_DIR$/ZX_Work/BurialPoint/埋点规范" />
       <recent name="$PROJECT_DIR$/DailyTest/pip" />
       <recent name="$PROJECT_DIR$/DailyTest/arithmetic" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.task_run">
-    <configuration name="20240603" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DailyScipts" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyTest/daily_script" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/daily_script/20240603.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="GetGasolinePrice" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DailyScipts" />
       <option name="ENV_FILES" value="" />
@@ -278,7 +253,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyTest/GasolinePrice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Alfred/workflow/GasolinePrice" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -288,8 +263,8 @@
         <option name="region" />
         <option name="useCurrentConnection" value="false" />
       </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/GasolinePrice/task_run.py" />
-      <option name="PARAMETERS" value="北京～" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Alfred/workflow/GasolinePrice/task_run.py" />
+      <option name="PARAMETERS" value="北京~" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -356,7 +331,6 @@
     <list>
       <item itemvalue="Python.test" />
       <item itemvalue="Python.test1" />
-      <item itemvalue="Python.20240603" />
       <item itemvalue="Python.GetGasolinePrice" />
       <item itemvalue="Python.ProvinceCityPinyinConvert" />
       <item itemvalue="Python.task_run" />
@@ -364,10 +338,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.task_run" />
+        <item itemvalue="Python.task_run" />
         <item itemvalue="Python.test1" />
         <item itemvalue="Python.ProvinceCityPinyinConvert" />
         <item itemvalue="Python.GetGasolinePrice" />
-        <item itemvalue="Python.20240603" />
       </list>
     </recent_temporary>
   </component>
@@ -435,7 +409,7 @@
       <workItem from="1716775243755" duration="868000" />
       <workItem from="1716797280314" duration="16083000" />
       <workItem from="1718616679595" duration="3207000" />
-      <workItem from="1718620062414" duration="5851000" />
+      <workItem from="1718620062414" duration="7063000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -506,14 +480,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1691392566394</updated>
-    </task>
-    <task id="LOCAL-00036" summary="upd">
-      <option name="closed" value="true" />
-      <created>1706147782024</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1706147782024</updated>
     </task>
     <task id="LOCAL-00037" summary="upd">
       <option name="closed" value="true" />
@@ -819,7 +785,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718620354943</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="upd">
+      <option name="closed" value="true" />
+      <created>1718676545207</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1718676545207</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -915,6 +889,21 @@
           <line>191</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Alfred/workflow/GasolinePrice/task_run.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Alfred/workflow/GasolinePrice/task_run.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Alfred/workflow/GasolinePrice/task_run.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/DailyTest/Echarts_JS/tree-basic.html</url>
           <line>45</line>
@@ -935,7 +924,7 @@
     <SUITE FILE_PATH="coverage/DailyScipts$ex_3.coverage" NAME="ex_3 Coverage Results" MODIFIED="1708418410706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
     <SUITE FILE_PATH="coverage/DailyScipts$book_reading_word.coverage" NAME="book_reading_word Coverage Results" MODIFIED="1685411434500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/book_reading" />
     <SUITE FILE_PATH="coverage/DailyScipts$service.coverage" NAME="service Coverage Results" MODIFIED="1713233147259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PythonVirtualEnv3.11/lib/python3.11/site-packages/selenium/webdriver/common" />
-    <SUITE FILE_PATH="coverage/DailyScipts$task_run.coverage" NAME="task_run Coverage Results" MODIFIED="1718676218813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/GasolinePrice" />
+    <SUITE FILE_PATH="coverage/DailyScipts$task_run.coverage" NAME="task_run Coverage Results" MODIFIED="1718677450641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow/GasolinePrice" />
     <SUITE FILE_PATH="coverage/DailyScipts$zhengyang_psychology_statistic.coverage" NAME="zhengyang_psychology_statistic Coverage Results" MODIFIED="1699255682304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
     <SUITE FILE_PATH="coverage/DailyScipts$test1__2_.coverage" NAME="test1 (2) Coverage Results" MODIFIED="1697533724247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
     <SUITE FILE_PATH="coverage/DailyScipts$pic1.coverage" NAME="pic1 Coverage Results" MODIFIED="1709090648663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ZX_Work/BurialPoint" />
@@ -944,6 +933,7 @@
     <SUITE FILE_PATH="coverage/DailyScipts$ex_4.coverage" NAME="ex_4 Coverage Results" MODIFIED="1708419668882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
     <SUITE FILE_PATH="coverage/DailyScipts$test.coverage" NAME="test Coverage Results" MODIFIED="1696839873760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WorkingPlanAndOthers/2022/07" />
     <SUITE FILE_PATH="coverage/DailyScipts$ex_1.coverage" NAME="ex_1 Coverage Results" MODIFIED="1708417795065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
+    <SUITE FILE_PATH="coverage/DailyScipts$task_run__1_.coverage" NAME="task_run (1) Coverage Results" MODIFIED="1718677338144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow/GasolinePrice" />
     <SUITE FILE_PATH="coverage/DailyScipts$csv_read.coverage" NAME="csv_read Coverage Results" MODIFIED="1686034792580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/Echarts_JS" />
     <SUITE FILE_PATH="coverage/DailyScipts$tets.coverage" NAME="tets Coverage Results" MODIFIED="1696846337119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$WeChatSport.coverage" NAME="WeChatSport Coverage Results" MODIFIED="1696924659262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/WeChatSport" />

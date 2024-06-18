@@ -18,7 +18,7 @@ if '~' or '～' in arg_str:
     def task_run():
         region = ProvinceCityPinyinConvert(arg_str).get_region_pinyin()
         res = GetGasolinePrice(region).get_price()
-        str1 = '95号汽油：' + str(res['95']) + '元每升,'
+        str1 = '95号汽油：' + str(res['95']) + '元每升，'
         str2 = '98号汽油：' + str(res['98']) + '元每升。'
         str3 = '更新日期：' + str(res['update_time']) + '。'
         str4 = str(res['next_adjust']) + '，'
@@ -34,3 +34,6 @@ if '~' or '～' in arg_str:
         )]
         result = {'items': items}
         print(json.dumps(result))
+
+
+    task_run()
