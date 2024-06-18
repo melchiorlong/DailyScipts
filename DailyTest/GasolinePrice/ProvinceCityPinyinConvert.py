@@ -37,7 +37,7 @@ class ProvinceCityPinyinConvert:
                         city_pinyin = city['pinyin']
         return city_pinyin
 
-    def get_province_pinyin(self, matches_city):
+    def get_province_pinyin_by_city(self, matches_city):
         province_pinyin = ''
         for province_id, city_info_list in ProvinceCityDicts.CITY_MAP.items():
             for city_info in city_info_list:
@@ -47,16 +47,23 @@ class ProvinceCityPinyinConvert:
                             province_pinyin = province_info['pinyin']
         return province_pinyin
 
+    def get_province_pinyin(self, matches_city):
+        res = ''
+        for province_info in ProvinceCityDicts.PROVINCE_LIST:
+            if matches_city == province_info['name']:
+                res = province_info['pinyin']
+        return res
+
     def get_region_pinyin(self):
+
         major_cities = self.get_major_city_list()
         secondary_cities = self.get_second_major_city_list()
         all_cities = major_cities + secondary_cities
         matches_city = self.find_closest_city(self.city_name, all_cities)
-        city_pinyin = self.get_city_pinyin(matches_city)
-        province_pinyin = self.get_province_pinyin(matches_city)
-        region_pinyin = ''
         if matches_city in major_cities:
-            region_pinyin = city_pinyin
+            region_pinyin = self.get_province_pinyin(matches_city)
         else:
+            city_pinyin = self.get_city_pinyin(matches_city)
+            province_pinyin = self.get_province_pinyin_by_city(matches_city)
             region_pinyin = province_pinyin + '/' + city_pinyin
         return region_pinyin

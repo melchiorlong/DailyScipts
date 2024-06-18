@@ -9,7 +9,6 @@ logger = logging.getLogger(__name__)
 
 
 class GetGasolinePrice():
-    pass
 
     def __init__(self, region: str):
         self._region = region
