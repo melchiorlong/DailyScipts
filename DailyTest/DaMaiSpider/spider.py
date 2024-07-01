@@ -1,5 +1,5 @@
 import datetime
-
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -11,16 +11,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from database_connect import models, MySQLConnect
 
-import time
-
 
 def driver_init():
     # 设置 WebDriver
-    # service = Service(ChromeDriverManager().install())
+    service = Service('/usr/local/bin/chromedriver/chromedriver')
     options = Options()
     options.headless = True
+    options.add_argument('--headless')  # 启用无头模式
     # driver_instance = webdriver.Chrome(service=service)
-    driver_instance = webdriver.Chrome(options=options)
+    driver_instance = webdriver.Chrome(service=service, options=options)
     return driver_instance
 
 
@@ -115,5 +114,5 @@ def database_writer(show_list):
 if __name__ == "__main__":
     driver_instance = driver_init()
     show_list = spider(driver_instance)
-    # csv_writer(show_list)
-    database_writer(show_list)
+    csv_writer(show_list)
+    # database_writer(show_list)
