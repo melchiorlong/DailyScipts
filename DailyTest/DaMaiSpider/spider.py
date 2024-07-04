@@ -113,5 +113,5 @@ def database_writer(show_list):
 if __name__ == "__main__":
     driver_instance = driver_init()
     show_list = spider(driver_instance)
-    csv_writer(show_list)
-    # database_writer(show_list)
+    # csv_writer(show_list)
+    database_writer(show_list)
