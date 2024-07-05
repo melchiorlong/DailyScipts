@@ -18,8 +18,8 @@ def driver_init():
     options.headless = True
     options.add_argument('--headless')  # 启用无头模式
     # driver_instance = webdriver.Chrome(service=service)
-    driver_instance = webdriver.Chrome(service=service, options=options)
-    return driver_instance
+    driver_inst = webdriver.Chrome(service=service, options=options)
+    return driver_inst
 
 
 def spider(driver_instance):
@@ -111,7 +111,7 @@ def database_writer(show_list):
 
 
 if __name__ == "__main__":
-    driver_instance = driver_init()
-    show_list = spider(driver_instance)
+    driver = driver_init()
+    res_list = spider(driver)
     # csv_writer(show_list)
-    database_writer(show_list)
+    database_writer(res_list)
