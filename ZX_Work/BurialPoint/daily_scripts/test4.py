@@ -1,56 +1,136 @@
 import sqlparse
-from sqlparse.sql import IdentifierList, Identifier, Where
+from sqlparse.sql import IdentifierList, Identifier, Function
 from sqlparse.tokens import Keyword, DML
 from sqllineage.runner import LineageRunner
-from sqllineage import run_l
 
-# 定义 SQL 脚本
+
+def extract_tables_and_columns(parsed):
+    tables = set()
+    columns = set()
+    joins = []
+
+    def extract_from_part(parsed):
+        from_seen = False
+        join_clause = None
+
+        for item in parsed.tokens:
+            if from_seen:
+                if is_subselect(item):
+                    for x in extract_from_part(item):
+                        yield x
+                elif item.ttype is Keyword and 'JOIN' in item.value.upper():
+                    if join_clause:
+                        joins.append(join_clause)
+                    join_clause = {'type': item.value.upper(), 'condition': ''}
+                elif join_clause and item.ttype is Keyword and item.value.upper() == 'ON':
+                    join_clause['condition'] += ' ON '
+                elif join_clause and item.ttype not in (Keyword, None):
+                    join_clause['condition'] += item.value
+                elif isinstance(item, IdentifierList):
+                    for identifier in item.get_identifiers():
+                        tables.add(identifier.get_real_name())
+                elif isinstance(item, Identifier):
+                    tables.add(item.get_real_name())
+                elif item.ttype is Keyword and item.value.upper() == 'WHERE':
+                    if join_clause:
+                        joins.append(join_clause)
+                        join_clause = None
+            elif item.ttype is Keyword and item.value.upper() == 'FROM':
+                from_seen = True
+
+        if join_clause:
+            joins.append(join_clause)
+
+    def extract_columns(parsed):
+        select_seen = False
+        case_when = False
+        case_expr = ""
+        current_column = ""
+
+        for item in parsed.tokens:
+            if select_seen:
+                if isinstance(item, IdentifierList):
+                    for identifier in item.get_identifiers():
+                        columns.add(str(identifier))
+                elif isinstance(item, Identifier) or isinstance(item, Function):
+                    current_column = str(item)
+                    columns.add(current_column)
+                elif item.ttype is Keyword and item.value.upper() == 'CASE':
+                    case_when = True
+                    case_expr = item.value
+                elif case_when:
+                    case_expr += item.value
+                    if item.ttype is Keyword and item.value.upper() == 'END':
+                        case_when = False
+                        columns.add(case_expr.strip())
+                        case_expr = ""
+                elif item.ttype is not None and item.ttype != Keyword:
+                    current_column += item.value.strip()
+                elif item.ttype == Keyword and current_column:
+                    columns.add(current_column.strip())
+                    current_column = ""
+            elif item.ttype is DML and item.value.upper() == 'SELECT':
+                select_seen = True
+
+        if current_column:
+            columns.add(current_column.strip())
+
+    def is_subselect(parsed):
+        if not parsed.is_group:
+            return False
+        for item in parsed.tokens:
+            if item.ttype is DML and item.value.upper() == 'SELECT':
+                return True
+        return False
+
+    for item in extract_from_part(parsed):
+        if isinstance(item, IdentifierList):
+            for identifier in item.get_identifiers():
+                tables.add(identifier.get_real_name())
+        elif isinstance(item, Identifier):
+            tables.add(item.get_real_name())
+
+    extract_columns(parsed)
+
+    return tables, columns, joins
+
+
+def parse_sql_script(script):
+    statements = sqlparse.split(script)
+    for statement in statements:
+        statement = statement.strip()
+        if statement:
+            runner = LineageRunner(statement)
+            source_tables = runner.source_tables
+            target_tables = runner.target_tables
+
+            parsed = sqlparse.parse(statement)[0]
+            tables, columns, joins = extract_tables_and_columns(parsed)
+
+            print("SQL语句:")
+            print(statement)
+            print("源表: ", source_tables)
+            print("目标表: ", target_tables)
+            print("SELECT字段: ", columns)
+            print("关联关系: ", joins)
+            print("\n")
+
+
+# 示例 SQL 脚本
 sql_script = """
 CREATE TABLE result_table AS
-SELECT a.id, b.name, c.value
+SELECT a.id, b.name, c.value,
+       CASE WHEN a.type = 'A' THEN 'Type A'
+            WHEN a.type = 'B' THEN 'Type B'
+            ELSE 'Other' END as type_description
 FROM table_a a
 JOIN table_b b ON a.id = b.id
 LEFT JOIN table_c c ON b.id = c.id;
-RIGHT JOIN table_d d ON c.id = d.id;
 
 INSERT INTO another_table (id, name)
 SELECT id, name
 FROM result_table;
 """
 
-# 使用 sqlparse 分割 SQL 脚本为独立的语句
-statements = sqlparse.split(sql_script)
-
-# 分析每个 SQL 语句
-for statement in statements:
-    if statement.strip():  # 确保语句不为空
-        print(f"\nAnalyzing SQL: {statement}")
-        # 使用 SQLLineage 进行分析
-        result = SQLLineage(statement)
-
-        # 输出源表和目标表
-        print("Source Tables:", [str(table) for table in result.source_tables])
-        print("Target Tables:", [str(table) for table in result.target_tables])
-
-        # 使用 sqlparse 进行深入解析以获取字段和 JOIN 信息
-        parsed = sqlparse.parse(statement)[0]
-        select_columns = []
-        joins = []
-
-        # 遍历 tokens 来获取 SELECT 中的字段和 JOIN 信息
-        for token in parsed.tokens:
-            if isinstance(token, sqlparse.sql.IdentifierList):
-                for identifier in token.get_identifiers():
-                    select_columns.append(str(identifier))
-            elif isinstance(token, sqlparse.sql.Identifier):
-                select_columns.append(str(token))
-            elif token.ttype is sqlparse.tokens.Keyword and 'JOIN' in token.value.upper():
-                joins.append(token.value)
-
-        # 输出 SELECT 的字段
-        print("Columns Selected:", select_columns)
-        # 输出 JOIN 信息
-        if joins:
-            print("Join Operations:", joins)
-        else:
-            print("No join operations in this SQL.")
+# 解析 SQL 脚本
+parse_sql_script(sql_script)
