@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/test3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/daily_script/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/daily_script/test2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="markdown" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -114,6 +113,7 @@
     "Python.test1 (1).executor": "Run",
     "Python.test1.executor": "Run",
     "Python.test2.executor": "Run",
+    "Python.test3.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -161,7 +161,7 @@
       <recent name="$PROJECT_DIR$/DailyTest/arithmetic" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.spider">
+  <component name="RunManager" selected="Python.test3">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="DailyScipts" />
       <option name="ENV_FILES" value="" />
@@ -274,34 +274,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DailyScipts" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/test1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DailyScipts" />
       <option name="ENV_FILES" value="" />
@@ -358,21 +330,49 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DailyScipts" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/test3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.test" />
       <item itemvalue="Python.impr_click_pu_uv_sql" />
+      <item itemvalue="Python.test3" />
       <item itemvalue="Python.spider" />
       <item itemvalue="Python.test1" />
-      <item itemvalue="Python.test1 (1)" />
       <item itemvalue="Python.test2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test3" />
         <item itemvalue="Python.spider" />
         <item itemvalue="Python.impr_click_pu_uv_sql" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.test1" />
-        <item itemvalue="Python.test1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -448,7 +448,7 @@
       <workItem from="1719768204245" duration="521000" />
       <workItem from="1719768754404" duration="4122000" />
       <workItem from="1719820982378" duration="3327000" />
-      <workItem from="1719825604656" duration="20208000" />
+      <workItem from="1719825604656" duration="25798000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -519,14 +519,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1691392566394</updated>
-    </task>
-    <task id="LOCAL-00042" summary="upd">
-      <option name="closed" value="true" />
-      <created>1709110395563</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1709110395563</updated>
     </task>
     <task id="LOCAL-00043" summary="upd">
       <option name="closed" value="true" />
@@ -832,7 +824,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720079250345</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="upd">
+      <option name="closed" value="true" />
+      <created>1720149478765</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1720149478765</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -982,7 +982,7 @@
     <SUITE FILE_PATH="coverage/DailyScipts$string_conversion.coverage" NAME="string_conversion Coverage Results" MODIFIED="1698396631470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$MySQLConnect.coverage" NAME="MySQLConnect Coverage Results" MODIFIED="1713174797268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/LocalMySQLConnect" />
     <SUITE FILE_PATH="coverage/DailyScipts$20240603.coverage" NAME="20240603 Coverage Results" MODIFIED="1717396385253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/daily_script" />
-    <SUITE FILE_PATH="coverage/DailyScipts$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1698370202032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
+    <SUITE FILE_PATH="coverage/DailyScipts$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1720489259609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
     <SUITE FILE_PATH="coverage/DailyScipts$zhengyang_psychology_statistic.coverage" NAME="zhengyang_psychology_statistic Coverage Results" MODIFIED="1699255682304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/excel_test" />
     <SUITE FILE_PATH="coverage/DailyScipts$20230817.coverage" NAME="20230817 Coverage Results" MODIFIED="1696754198770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/daily_script" />
     <SUITE FILE_PATH="coverage/DailyScipts$service.coverage" NAME="service Coverage Results" MODIFIED="1713233147259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PythonVirtualEnv3.11/lib/python3.11/site-packages/selenium/webdriver/common" />
