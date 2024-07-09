@@ -1,5 +1,5 @@
 import sqlparse
-from sqlparse.sql import IdentifierList, Identifier
+from sqlparse.sql import IdentifierList, Identifier, Token
 from sqlparse.tokens import Keyword, DML
 from sqllineage.runner import LineageRunner
 
@@ -7,24 +7,40 @@ from sqllineage.runner import LineageRunner
 def extract_tables_and_columns(parsed):
     tables = set()
     columns = set()
-    join_clauses = []
+    joins = []
 
     def extract_from_part(parsed):
         from_seen = False
+        join_clause = None
+
         for item in parsed.tokens:
             if from_seen:
                 if is_subselect(item):
                     for x in extract_from_part(item):
                         yield x
-                elif item.ttype is Keyword:
-                    return
-                elif item.ttype is None:
-                    for x in extract_from_part(item):
-                        yield x
-                else:
-                    yield item
+                elif item.ttype is Keyword and item.value.upper() in (
+                'JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'INNER JOIN', 'OUTER JOIN'):
+                    if join_clause:
+                        joins.append(join_clause)
+                    join_clause = {'type': item.value.upper(), 'condition': ''}
+                elif join_clause and item.ttype is Keyword and item.value.upper() == 'ON':
+                    join_clause['condition'] += ' ON '
+                elif join_clause and item.ttype in (None, Keyword, Identifier, Token):
+                    join_clause['condition'] += item.value
+                elif isinstance(item, IdentifierList):
+                    for identifier in item.get_identifiers():
+                        tables.add(identifier.get_real_name())
+                elif isinstance(item, Identifier):
+                    tables.add(item.get_real_name())
+                elif item.ttype is Keyword and item.value.upper() == 'WHERE':
+                    if join_clause:
+                        joins.append(join_clause)
+                        join_clause = None
             elif item.ttype is Keyword and item.value.upper() == 'FROM':
                 from_seen = True
+
+        if join_clause:
+            joins.append(join_clause)
 
     def extract_columns(parsed):
         select_seen = False
@@ -55,18 +71,7 @@ def extract_tables_and_columns(parsed):
 
     extract_columns(parsed)
 
-    for token in parsed.tokens:
-        if isinstance(token, IdentifierList):
-            for sub_token in token.get_identifiers():
-                if 'JOIN' in sub_token.value.upper():
-                    join_clauses.append(sub_token.value)
-        elif isinstance(token, Identifier):
-            if 'JOIN' in token.value.upper():
-                join_clauses.append(token.value)
-        elif 'JOIN' in token.value.upper():
-            join_clauses.append(token.value)
-
-    return tables, columns, join_clauses
+    return tables, columns, joins
 
 
 def parse_sql_script(script):
@@ -92,15 +97,15 @@ def parse_sql_script(script):
 
 # 示例 SQL 脚本
 sql_script = """
-CREATE TABLE result_table AS
-SELECT a.id, b.name, c.value
-FROM table_a a
-JOIN table_b b ON a.id = b.id
-LEFT JOIN table_c c ON b.id = c.id;
-
-INSERT INTO another_table (id, name)
-SELECT id, name
-FROM result_table;
+    CREATE TABLE result_table AS
+    SELECT a.id, b.name, c.value
+    FROM table_a a
+    JOIN table_b b ON a.id = b.id
+    LEFT JOIN table_c c ON b.id = c.id;
+    
+    INSERT INTO another_table (id, name)
+    SELECT id, name
+    FROM result_table;
 """
 
 # 解析 SQL 脚本
