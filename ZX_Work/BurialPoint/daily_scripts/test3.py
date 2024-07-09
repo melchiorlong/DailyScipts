@@ -97,15 +97,15 @@ def parse_sql_script(script):
 
 # 示例 SQL 脚本
 sql_script = """
-    CREATE TABLE result_table AS
-    SELECT a.id, b.name, c.value
-    FROM table_a a
-    JOIN table_b b ON a.id = b.id
-    LEFT JOIN table_c c ON b.id = c.id;
-    
-    INSERT INTO another_table (id, name)
-    SELECT id, name
-    FROM result_table;
+CREATE TABLE result_table AS
+SELECT a.id, b.name, c.value
+FROM table_a a
+JOIN table_b b ON a.id = b.id
+LEFT JOIN table_c c ON b.id = c.id;
+
+INSERT INTO another_table (id, name)
+SELECT id, name
+FROM result_table;
 """
 
 # 解析 SQL 脚本
