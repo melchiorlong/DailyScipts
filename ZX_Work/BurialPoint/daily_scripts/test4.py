@@ -1,8 +1,7 @@
 import sqlparse
-from sqlparse.sql import IdentifierList, Identifier, Function
-from sqlparse.tokens import Keyword, DML
+from sqlparse.sql import IdentifierList, Identifier, Function, Token
+from sqlparse.tokens import Keyword, DML, Punctuation
 from sqllineage.runner import LineageRunner
-
 
 def extract_tables_and_columns(parsed):
     tables = set()
@@ -18,13 +17,14 @@ def extract_tables_and_columns(parsed):
                 if is_subselect(item):
                     for x in extract_from_part(item):
                         yield x
-                elif item.ttype is Keyword and 'JOIN' in item.value.upper():
+                elif item.ttype is Keyword and item.value.upper() in (
+                'JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'INNER JOIN', 'OUTER JOIN'):
                     if join_clause:
                         joins.append(join_clause)
                     join_clause = {'type': item.value.upper(), 'condition': ''}
                 elif join_clause and item.ttype is Keyword and item.value.upper() == 'ON':
                     join_clause['condition'] += ' ON '
-                elif join_clause and item.ttype not in (Keyword, None):
+                elif join_clause and item.ttype in (None, Keyword, Identifier, Token) and item.value.upper() != 'GROUP BY':
                     join_clause['condition'] += item.value
                 elif isinstance(item, IdentifierList):
                     for identifier in item.get_identifiers():
@@ -35,8 +35,11 @@ def extract_tables_and_columns(parsed):
                     if join_clause:
                         joins.append(join_clause)
                         join_clause = None
+                elif item.value.upper() == 'GROUP BY':
+                    from_seen = False
             elif item.ttype is Keyword and item.value.upper() == 'FROM':
                 from_seen = True
+
 
         if join_clause:
             joins.append(join_clause)
@@ -52,9 +55,11 @@ def extract_tables_and_columns(parsed):
                 if isinstance(item, IdentifierList):
                     for identifier in item.get_identifiers():
                         columns.add(str(identifier))
-                elif isinstance(item, Identifier) or isinstance(item, Function):
-                    current_column = str(item)
-                    columns.add(current_column)
+                elif isinstance(item, Function):
+                    columns.add(str(item))
+                elif isinstance(item, Identifier):
+                    if not item.get_real_name().upper() in tables:
+                        columns.add(str(item))
                 elif item.ttype is Keyword and item.value.upper() == 'CASE':
                     case_when = True
                     case_expr = item.value
@@ -64,11 +69,14 @@ def extract_tables_and_columns(parsed):
                         case_when = False
                         columns.add(case_expr.strip())
                         case_expr = ""
-                elif item.ttype is not None and item.ttype != Keyword:
+                elif item.ttype in (Punctuation,) and item.value == ',':
+                    if current_column:
+                        columns.add(current_column.strip())
+                        current_column = ""
+                elif item.ttype not in (Keyword, DML):
                     current_column += item.value.strip()
-                elif item.ttype == Keyword and current_column:
-                    columns.add(current_column.strip())
-                    current_column = ""
+                elif item.ttype is Keyword and item.value.upper() == 'FROM':
+                    select_seen = False
             elif item.ttype is DML and item.value.upper() == 'SELECT':
                 select_seen = True
 
@@ -91,8 +99,10 @@ def extract_tables_and_columns(parsed):
             tables.add(item.get_real_name())
 
     extract_columns(parsed)
+    joins = [fac.strip() for fac in joins]
 
     return tables, columns, joins
+
 
 
 def parse_sql_script(script):
@@ -115,17 +125,19 @@ def parse_sql_script(script):
             print("关联关系: ", joins)
             print("\n")
 
-
 # 示例 SQL 脚本
 sql_script = """
 CREATE TABLE result_table AS
 SELECT a.id, b.name, c.value,
        CASE WHEN a.type = 'A' THEN 'Type A'
             WHEN a.type = 'B' THEN 'Type B'
-            ELSE 'Other' END as type_description
+            ELSE 'Other' END as type_description,
+       SUM(a.amount) as total_amount,
+       max(a.amount) as max_amount
 FROM table_a a
 JOIN table_b b ON a.id = b.id
-LEFT JOIN table_c c ON b.id = c.id;
+LEFT JOIN table_c c ON b.id = c.id
+GROUP BY a.id, b.name, c.value, a.type;
 
 INSERT INTO another_table (id, name)
 SELECT id, name
