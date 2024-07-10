@@ -7,6 +7,7 @@ def extract_tables_and_columns(parsed):
     tables = set()
     columns = set()
     joins = []
+    where_conditions = []
 
     def extract_from_part(parsed):
         from_seen = False
@@ -18,20 +19,21 @@ def extract_tables_and_columns(parsed):
                     for x in extract_from_part(item):
                         yield x
                 elif item.ttype is Keyword and item.value.upper() in (
-                'JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'INNER JOIN', 'OUTER JOIN'):
+                        'JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'INNER JOIN', 'OUTER JOIN'):
                     if join_clause:
                         joins.append(join_clause)
                     join_clause = {'type': item.value.upper(), 'condition': ''}
                 elif join_clause and item.ttype is Keyword and item.value.upper() == 'ON':
                     join_clause['condition'] += ' ON '
-                elif join_clause and item.ttype in (None, Keyword, Identifier, Token) and item.value.upper() != 'GROUP BY':
+                elif join_clause and item.ttype in (None, Keyword, Identifier, Token) and item.value.upper() != 'GROUP BY' and 'WHERE' not in item.value.upper():
                     join_clause['condition'] += item.value
                 elif isinstance(item, IdentifierList):
                     for identifier in item.get_identifiers():
                         tables.add(identifier.get_real_name())
                 elif isinstance(item, Identifier):
                     tables.add(item.get_real_name())
-                elif item.ttype is Keyword and item.value.upper() == 'WHERE':
+                elif item.ttype is None and 'WHERE' in item.value.upper():
+                    where_conditions.append(item.value.strip().casefold().replace('where', '').replace('\n', ' '))
                     if join_clause:
                         joins.append(join_clause)
                         join_clause = None
@@ -99,9 +101,8 @@ def extract_tables_and_columns(parsed):
             tables.add(item.get_real_name())
 
     extract_columns(parsed)
-    joins = [fac.strip() for fac in joins]
 
-    return tables, columns, joins
+    return tables, columns, joins, where_conditions
 
 
 
@@ -115,7 +116,8 @@ def parse_sql_script(script):
             target_tables = runner.target_tables
 
             parsed = sqlparse.parse(statement)[0]
-            tables, columns, joins = extract_tables_and_columns(parsed)
+
+            tables, columns, joins, where_conditions = extract_tables_and_columns(parsed)
 
             print("SQL语句:")
             print(statement)
@@ -123,6 +125,7 @@ def parse_sql_script(script):
             print("目标表: ", target_tables)
             print("SELECT字段: ", columns)
             print("关联关系: ", joins)
+            print("限制条件: ", where_conditions)
             print("\n")
 
 # 示例 SQL 脚本
@@ -137,6 +140,9 @@ SELECT a.id, b.name, c.value,
 FROM table_a a
 JOIN table_b b ON a.id = b.id
 LEFT JOIN table_c c ON b.id = c.id
+where
+c.value >= 1
+and c.value <= 10
 GROUP BY a.id, b.name, c.value, a.type;
 
 INSERT INTO another_table (id, name)
