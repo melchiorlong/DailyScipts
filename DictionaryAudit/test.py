@@ -4,7 +4,7 @@ from openpyxl.utils.cell import coordinate_to_tuple
 
 
 # 1.打开 Excel 表格并获取表格名称
-workbook = load_workbook(filename="/Users/tianlong/Desktop/中信JD.xlsx")
+workbook = load_workbook(filename="/Users/tianlong/Desktop/ZXJD.xlsx")
 sheet_names_list = workbook.sheetnames
 
 # 2.通过 sheet 名称获取表格
