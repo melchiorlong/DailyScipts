@@ -1,47 +1,28 @@
-l1 = [0.806404459,
-      0.869530952,
-      0.795405392,
-      0.696768761,
-      0.753737376,
-      0.795405392,
-      0.725442352,
-      0.757818581,
-      0.775115135,
-      0.792539118,
-      0.827557929,
-      0.853620796,
-      0.813907741,
-      0.889938054,
-      0.874966957,
-      0.822166197,
-      0.822166197,
-      0.821727365,
-      0.852373099,
-      0.852373099,
-      0.90583954,
-      0.829102932,
-      0.769177143,
-      0.6249292]
-
-avg = sum(l1) / len(l1)
-# print(avg)
+# import re
 #
-# score = ((
-#              1.4 * 0.25 +   # 7、8、9三个月 月均问题定位时间101小时
-#              1 * 0.2 +   # 完成1个需求规范建议文档的撰写
-#              1.8 * 0.3 +   # 18个口径    ！！！主要控分手段！！！
-#              17/19 * 0.25) * 0.5   # 如果提19个问题，定位17个
-#      +
-#      (
-#              1.1 * 0.5   # 需求规范建议上传到OKR共享文档
-#      ))
-# print(score)
+# # 示例SQL脚本
+# sql_script = """
+# SELECT * FROM table1;
+# SELECT column1, column2 FROM table2;
+# INSERT INTO table3 (column1, column2) VALUES ('value1', 'value2');
+# UPDATE table4 SET column1 = 'value1' WHERE column2 = 'value2';
+# DELETE FROM table5 WHERE column1 = 'value1';
+# SELECT a.column1, b.column2 FROM table6 a JOIN table7 b ON a.id = b.id;
+# """
 #
+# # 使用正则表达式提取表名
+# table_names = re.findall(r'FROM\s+([a-zA-Z_][a-zA-Z0-9_]*)(?:\s|;|,|$)', sql_script, re.IGNORECASE)
 #
+# # 去重并排序
+# unique_table_names = sorted(set(table_names))
 #
+# print("Table names found in SQL script:")
+# for table_name in unique_table_names:
+#     print(table_name)
 
 
+s1 = {1, 2, 3, 4}
 
-str = 'QWEDasda'
-
-print(str.casefold().replace('qw', '111'))
+s2 = {1, 5, 6, 7}
+s3 = s1 | s2
+print(s3)

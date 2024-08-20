@@ -1,8 +1,20 @@
-map1 = {}
+from datetime import datetime, timedelta
 
-map1.update({1: 1, 2: 1})
-map1.update({3: 2, 4: 3})
-map1.update({5: 2, 6: 3})
+s1 = '04:57:00'
 
-print(map1)
 
+
+d1 = datetime.strptime(s1, '%H:%M:%S')
+
+d2 = d1 + timedelta(hours=0 * 24)
+
+print(d1)
+print(d2)
+
+
+s2 = 'T+1'
+print(s2[0])
+
+print(datetime.now().strftime('_%H:%M:%S'))
+
+# print(str().replace(' ', '_'))
