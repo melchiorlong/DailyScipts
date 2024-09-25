@@ -1,3 +1,5 @@
+import pandas as pd
+
 page_template_map = [
     {'2024':
          {'20427': '导航栏',
@@ -35,18 +37,65 @@ page_template_map = [
           '28086': '资讯',
           }}]
 
+template_id_instance_name_dict = {
+    26427: ["导航栏", "cb-cube-header-new"],
+    26428: ["首页头部背景图", "cb-cube-v10-home-banner"],
+    26429: ["大金刚", "cb-cube-v10-home-banner-menu"],
+    26431: ["战略位", "cb-cube-v10-home-submenu"],
+    26478: ["小金刚.", "cb-cube-v10-home-smart-menu"],
+    26656: ["待办事项", "cb-cube-standard-home-todo-reminder"],
+    26657: ["轮播banner（中部）", "cb-cube-banner1-new"],
+    27409: ["新客专享", "cb-cube-v10-home-feature-business"],
+    27410: ["权益活动", "cb-cube-v10-home-feature-business3"],
+    27411: ["有温度的资产负债表", "cb-cube-v10-home-feature-business"],
+    27413: ["发薪专享", "cb-cube-v10-home-salary-card"],
+    27414: ["借钱专区", "cb-cube-v10-home-feature-business3"],
+    27415: ["幸福+养老账本", "cb-cube-v10-home-smart-annuity"],
+    27416: ["“双卡人”专属", "cb-cube-v10-home-feature-business2"],
+    27417: ["资讯", "cb-cube-news-hot"],
+    27418: ["财富专享", "cb-cube-v10-home-wealth-exclusive"],
+    27419: ["私行尊享", "cb-cube-v10-private-privilege"],
+    27420: ["城市服务", "cb-cube-v10-home-feature-business"],
+    27422: ["出国金融", "cb-cube-v10-home-fea"],
+}
+
+a = template_id_instance_name_dict.keys()
+print(a)
+
+def get_template_type_name(template_id):
+    return template_id_instance_name_dict[template_id][1]
+
+
+title_list = ['所属页面',
+              '页面ID',
+              '模板ID',
+              '模板名称',
+              '模板类型',
+              '查询口径',
+              ]
+print(','.join(title_list) + '\n')
+
+owning_page_list = []
+page_id_list = []
+template_id_list = []
+template_name_list = []
+template_type_name_list = []
+sql_str_list = []
+
 for page_template_info in page_template_map:
     for page_id, template_info in page_template_info.items():
         for template_id, template_name in template_info.items():
+            content_list = []
             if page_id == '2024':
                 fac_page_type = "'dynamic'"
-                template_name = "# 以下SQL为" + "算法的" + template_name + "查询脚本"
+                owning_page = '算法'
+                # template_name = "# 以下SQL为" + "算法的" + template_name + "查询脚本"
             else:
                 fac_page_type = "'static'"
-                template_name = "# 以下SQL为" + "静态的" + template_name + "查询脚本"
+                owning_page = '静态'
+                # template_name = "# 以下SQL为" + "静态的" + template_name + "查询脚本"
 
             sql_str = """
-            {template_name}
             with template_element_map as
                      (select *
                       from (values ('{dynamic_page_id}', '{dynamic_template_id}', {page_type}),
@@ -166,9 +215,6 @@ for page_template_info in page_template_map:
                      csat.element_instance_id,
                      csat.ELEMENT_INSTANCE_NAME
             limit 30000;
-            
-            ------------------------------------------------------------------------------------------------------------------------------------------------
-            
             """.format(
                 dynamic_page_id=page_id,
                 dynamic_template_id=template_id,
@@ -176,4 +222,25 @@ for page_template_info in page_template_map:
                 template_name=template_name,
             )
 
-            print(sql_str)
+            owning_page_list.append(owning_page)
+            page_id_list.append(str(page_id))
+            template_id_list.append(str(template_id))
+            template_name_list.append(template_name)
+
+            template_type_name_list.append(get_template_type_name(int(template_id)) if int(template_id) in template_id_instance_name_dict.keys() else '-')
+            sql_str_list.append(sql_str)
+
+data = {
+    '所属页面': owning_page_list,
+    '页面ID': page_id_list,
+    '模板ID': template_id_list,
+    '模板名称': template_name_list,
+    '模板类型': template_type_name_list,
+    '查询口径': sql_str_list,
+}
+
+df = pd.DataFrame(data=data)
+# print(df)
+
+new_file_name = '/Users/tianlong/Downloads/result.xlsx'
+df.to_excel(new_file_name, index=False, engine='openpyxl')

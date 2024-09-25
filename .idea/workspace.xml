@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
-      <change afterPath="$PROJECT_DIR$/AlpacaTest/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AlpacaTest/test1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/GoogleMail/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/GoogleMail/mail.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/res/2024-08-14 15:00:00.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/res/2024-08-15 15:00:00.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/res/2024-08-16 15:00:00.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/res/2024-08-17 15:00:00.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/test2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/test3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/test4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kafka4Py/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kafka4Py/consumer_test1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kafka4Py/example.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kafka4Py/producer_test1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/daily_script/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/daily_script/test2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAudit/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAudit/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/TemporaryScript/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/TemporaryScript/test4.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/test4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/impr_click_pu_uv_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/impr_click_pu_uv_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/script1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/script1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +135,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.general",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Applications/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -184,7 +170,7 @@
       <recent name="$PROJECT_DIR$/DailyTest/pip" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test4">
+  <component name="RunManager" selected="Python.impr_click_pu_uv_sql">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="DailyScipts" />
       <option name="ENV_FILES" value="" />
@@ -213,7 +199,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mail" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="impr_click_pu_uv_sql" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DailyScipts" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,7 +208,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyTest/GoogleMail" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -232,7 +218,35 @@
         <option name="region" />
         <option name="useCurrentConnection" value="false" />
       </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/GoogleMail/mail.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/impr_click_pu_uv_sql.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="script1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DailyScipts" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/script1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -289,34 +303,6 @@
         <option name="useCurrentConnection" value="false" />
       </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/test1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DailyScipts" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyTest" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/TemporaryScript/test2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -383,19 +369,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.mail" />
+      <item itemvalue="Python.impr_click_pu_uv_sql" />
+      <item itemvalue="Python.script1" />
       <item itemvalue="Python.test1 (2)" />
-      <item itemvalue="Python.test2 (2)" />
       <item itemvalue="Python.test3" />
       <item itemvalue="Python.test4" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.impr_click_pu_uv_sql" />
+        <item itemvalue="Python.script1" />
         <item itemvalue="Python.test4" />
         <item itemvalue="Python.test3" />
-        <item itemvalue="Python.test2 (2)" />
         <item itemvalue="Python.test1 (2)" />
-        <item itemvalue="Python.mail" />
       </list>
     </recent_temporary>
   </component>
@@ -472,7 +458,17 @@
       <workItem from="1719768754404" duration="4122000" />
       <workItem from="1719820982378" duration="3327000" />
       <workItem from="1719825604656" duration="44213000" />
-      <workItem from="1722493077173" duration="28785000" />
+      <workItem from="1722493077173" duration="28897000" />
+      <workItem from="1724143199760" duration="616000" />
+      <workItem from="1724724808738" duration="1951000" />
+      <workItem from="1725698738532" duration="143218000" />
+      <workItem from="1726121776001" duration="1553000" />
+      <workItem from="1726853520806" duration="5713000" />
+      <workItem from="1727145187018" duration="812000" />
+      <workItem from="1727166672428" duration="748000" />
+      <workItem from="1727167429941" duration="71000" />
+      <workItem from="1727167506360" duration="134000" />
+      <workItem from="1727167656447" duration="10662000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -543,14 +539,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1691392566394</updated>
-    </task>
-    <task id="LOCAL-00050" summary="upd">
-      <option name="closed" value="true" />
-      <created>1711446222288</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1711446222306</updated>
     </task>
     <task id="LOCAL-00051" summary="upd">
       <option name="closed" value="true" />
@@ -856,7 +844,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721802372099</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="upd">
+      <option name="closed" value="true" />
+      <created>1724143068503</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1724143068504</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -951,11 +947,6 @@
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/impr_click_pu_uv_sql.py</url>
-          <line>178</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Kafka4Py/producer_test1.py</url>
           <line>3</line>
           <option name="timeStamp" value="111" />
@@ -971,19 +962,9 @@
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DailyTest/TemporaryScript/test2.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DailyTest/TemporaryScript/test2.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DailyTest/TemporaryScript/test3.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="120" />
+          <url>file://$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/impr_click_pu_uv_sql.py</url>
+          <line>241</line>
+          <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/DailyTest/Echarts_JS/tree-basic.html</url>
@@ -991,6 +972,13 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1001,7 +989,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DailyScipts$current_rate_exchange.coverage" NAME="current_rate_exchange Coverage Results" MODIFIED="1698370412716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$ex_3.coverage" NAME="ex_3 Coverage Results" MODIFIED="1708418410706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
-    <SUITE FILE_PATH="coverage/DailyScipts$impr_click_pu_uv_sql.coverage" NAME="impr_click_pu_uv_sql Coverage Results" MODIFIED="1720081618682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
+    <SUITE FILE_PATH="coverage/DailyScipts$impr_click_pu_uv_sql.coverage" NAME="impr_click_pu_uv_sql Coverage Results" MODIFIED="1727258339378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
     <SUITE FILE_PATH="coverage/DailyScipts$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1698389355002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$book_reading_word.coverage" NAME="book_reading_word Coverage Results" MODIFIED="1685411434500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/book_reading" />
     <SUITE FILE_PATH="coverage/DailyScipts$ProvinceCityPinyinConvert.coverage" NAME="ProvinceCityPinyinConvert Coverage Results" MODIFIED="1718672163093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/GasolinePrice" />
@@ -1013,8 +1001,8 @@
     <SUITE FILE_PATH="coverage/DailyScipts$task_run__1_.coverage" NAME="task_run (1) Coverage Results" MODIFIED="1718677338144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow/GasolinePrice" />
     <SUITE FILE_PATH="coverage/DailyScipts$spider.coverage" NAME="spider Coverage Results" MODIFIED="1720513915188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/DaMaiSpider" />
     <SUITE FILE_PATH="coverage/DailyScipts$test1__1_.coverage" NAME="test1 (1) Coverage Results" MODIFIED="1722478724559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AlpacaTest" />
-    <SUITE FILE_PATH="coverage/DailyScipts$script1.coverage" NAME="script1 Coverage Results" MODIFIED="1711438915527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
     <SUITE FILE_PATH="coverage/DailyScipts$test2__1_.coverage" NAME="test2 (1) Coverage Results" MODIFIED="1722492734471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AlpacaTest" />
+    <SUITE FILE_PATH="coverage/DailyScipts$script1.coverage" NAME="script1 Coverage Results" MODIFIED="1727257598121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
     <SUITE FILE_PATH="coverage/DailyScipts$mult_run.coverage" NAME="mult_run Coverage Results" MODIFIED="1685431682199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/book_reading" />
     <SUITE FILE_PATH="coverage/DailyScipts$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1722240799859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/daily_script" />
     <SUITE FILE_PATH="coverage/DailyScipts$ex_1__1_.coverage" NAME="ex_1 (1) Coverage Results" MODIFIED="1708425553195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MatplotlibPractice" />
@@ -1029,7 +1017,7 @@
     <SUITE FILE_PATH="coverage/DailyScipts$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1721904849158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DictionaryAudit" />
     <SUITE FILE_PATH="coverage/DailyScipts$ex_4.coverage" NAME="ex_4 Coverage Results" MODIFIED="1708419668882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
     <SUITE FILE_PATH="coverage/DailyScipts$producer_test1.coverage" NAME="producer_test1 Coverage Results" MODIFIED="1721974476952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Kafka4Py" />
-    <SUITE FILE_PATH="coverage/DailyScipts$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1723800208563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/TemporaryScript" />
+    <SUITE FILE_PATH="coverage/DailyScipts$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1727249243793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/TemporaryScript" />
     <SUITE FILE_PATH="coverage/DailyScipts$current_rate_exchange_new.coverage" NAME="current_rate_exchange_new Coverage Results" MODIFIED="1696839889084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WorkingPlanAndOthers/2022/07" />
     <SUITE FILE_PATH="coverage/DailyScipts$ex_1.coverage" NAME="ex_1 Coverage Results" MODIFIED="1708417795065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
     <SUITE FILE_PATH="coverage/DailyScipts$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1697593741389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/dateutil_test" />
