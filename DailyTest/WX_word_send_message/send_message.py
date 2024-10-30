@@ -1,7 +1,7 @@
 import requests, json
 import datetime
 
-wx_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=252978a3-7e82-4fce-93d8-e8be66035b9b"  # 测试机器人1号
+wx_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2f21a636-397a-4f30-a715-d1383afc1d29"
 
 last_monday = str(datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().weekday() + 7))[0:10]
 last_friday = str(datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().weekday() + 3))[0:10]

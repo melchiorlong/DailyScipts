@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
-      <change afterPath="$PROJECT_DIR$/DailyTest/WX_word_send_message/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DailyTest/WX_word_send_message/send_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/TemporaryScript/test4.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/test4.py" afterDir="false" />
-    </list>
+    <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +130,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "ts.external.directory.path": "/Applications/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -469,7 +464,7 @@
       <workItem from="1727167429941" duration="71000" />
       <workItem from="1727167506360" duration="134000" />
       <workItem from="1727167656447" duration="13050000" />
-      <workItem from="1728459920860" duration="10255000" />
+      <workItem from="1728459920860" duration="10956000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -540,14 +535,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1691392566394</updated>
-    </task>
-    <task id="LOCAL-00052" summary="upd">
-      <option name="closed" value="true" />
-      <created>1711591229685</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1711591229685</updated>
     </task>
     <task id="LOCAL-00053" summary="upd">
       <option name="closed" value="true" />
@@ -853,7 +840,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727258414227</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="upd">
+      <option name="closed" value="true" />
+      <created>1730258543144</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1730258543145</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
