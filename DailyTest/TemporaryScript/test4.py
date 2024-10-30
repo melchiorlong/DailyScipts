@@ -1,31 +1,8 @@
-score = ((
-                 1.8 * 0.25 +  # 7、8、9三个月 月均问题定位时间101小时
-                 1 * 0.2 +  # 完成1个需求规范建议文档的撰写
-                 1.8 * 0.3 +  # 18个口径    ！！！主要控分手段！！！
-                 23 / 20 * 0.25) * 0.5  # 如果提19个问题，定位17个
-         +
-         (
-                 1.1 * 0.5  # 需求规范建议上传到OKR共享文档
-         ))
-print(round(score, 2))
+import datetime
 
-# Q2月均
-# 111.33333333
-# Q3月均
-
-# 1 - (((303)/3) / 111.3)
-# = 0.09254268
-
-
-
-# 定位平均时长减少3%～4%为60%
-# 定位平均时长减少4%～5%为80%
-# 定位平均时长减少5%～6%为100%
-# 定位平均时长减少6%～7%为120%
-# 定位平均时长减少7%～8%为140%
-# 定位平均时长减少8%～9%为160%
-# 定位平均时长减少9%～10%为180%
-# 定位平均时长减少10%～11%为200%
-
-
-1- (101/109)
+a = str(datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().weekday() + 7))[0:10]
+b = str(datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().weekday() + 3))[0:10]
+c = datetime.datetime.now().weekday() + 7
+print(a)
+print(b)
+print(c)
