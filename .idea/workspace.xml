@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be3ea72-23ce-404d-a500-3ef3235011d8" name="Changes" comment="upd">
+      <change afterPath="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary/vocabulary.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary/vocabulary_load_datebase.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/IELTS/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/IELTS/database_connect/MySQLConnect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/IELTS/database_connect/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DailyTest/IELTS/database_connect/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/WX_word_send_message/crontab_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/WX_word_send_message/crontab_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyTest/WX_word_send_message/send_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/WX_word_send_message/send_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyTest/TemporaryScript/test4.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyTest/TemporaryScript/test4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +123,7 @@
     "Python.task_run (1).executor": "Run",
     "Python.task_run.executor": "Run",
     "Python.temp1.executor": "Debug",
+    "Python.test (1).executor": "Run",
     "Python.test1 (1).executor": "Debug",
     "Python.test1 (2).executor": "Run",
     "Python.test1.executor": "Run",
@@ -125,13 +133,14 @@
     "Python.test3.executor": "Run",
     "Python.test4.executor": "Run",
     "Python.tiantongyuan.executor": "Run",
+    "Python.vocabulary_load_datebase.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/tianlong/PycharmProjects/DailyScipts/DailyTest/WX_word_send_message",
+    "last_opened_file_path": "/Users/tianlong/PycharmProjects/DailyScipts/DailyTest/IELTS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -158,21 +167,21 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DailyTest/IELTS" />
+      <recent name="$PROJECT_DIR$/IELTS/Vocabulary" />
       <recent name="$PROJECT_DIR$/DailyTest/WX_word_send_message" />
       <recent name="$PROJECT_DIR$/ZX_Work/BurialPoint/会议纪要" />
       <recent name="$PROJECT_DIR$/DailyTest/GasolinePrice" />
-      <recent name="$PROJECT_DIR$/DailyTest/DaMaiSpider" />
-      <recent name="$PROJECT_DIR$/DailyTest/DaMaiSpider/database_connect" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DailyTest" />
       <recent name="$PROJECT_DIR$/DailyTest/TemporaryScript" />
       <recent name="$PROJECT_DIR$/Alfred/workflow" />
       <recent name="$PROJECT_DIR$/DailyTest/DaMaiSpider" />
       <recent name="$PROJECT_DIR$/ZX_Work/BurialPoint/埋点规范" />
-      <recent name="$PROJECT_DIR$/DailyTest/pip" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.crontab_test">
+  <component name="RunManager" selected="Python.vocabulary_load_datebase">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="DailyScipts" />
       <option name="ENV_FILES" value="" />
@@ -229,34 +238,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="impr_click_pu_uv_sql" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DailyScipts" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts/impr_click_pu_uv_sql.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="send_message" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DailyScipts" />
       <option name="ENV_FILES" value="" />
@@ -277,6 +258,34 @@
         <option name="useCurrentConnection" value="false" />
       </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/WX_word_send_message/send_message.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DailyScipts" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -341,7 +350,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tiantongyuan" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="vocabulary_load_datebase" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DailyScipts" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -350,7 +359,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyTest/lianjia_rental" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -360,7 +369,7 @@
         <option name="region" />
         <option name="useCurrentConnection" value="false" />
       </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/lianjia_rental/tiantongyuan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary/vocabulary_load_datebase.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -371,19 +380,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.vocabulary_load_datebase" />
       <item itemvalue="Python.crontab_test" />
       <item itemvalue="Python.send_message" />
-      <item itemvalue="Python.tiantongyuan" />
-      <item itemvalue="Python.impr_click_pu_uv_sql" />
       <item itemvalue="Python.test4" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.crontab_test" />
-        <item itemvalue="Python.send_message" />
-        <item itemvalue="Python.tiantongyuan" />
+        <item itemvalue="Python.vocabulary_load_datebase" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.test4" />
-        <item itemvalue="Python.impr_click_pu_uv_sql" />
+        <item itemvalue="Python.send_message" />
+        <item itemvalue="Python.crontab_test" />
       </list>
     </recent_temporary>
   </component>
@@ -471,7 +480,10 @@
       <workItem from="1727167429941" duration="71000" />
       <workItem from="1727167506360" duration="134000" />
       <workItem from="1727167656447" duration="13050000" />
-      <workItem from="1728459920860" duration="17769000" />
+      <workItem from="1728459920860" duration="19894000" />
+      <workItem from="1731914654827" duration="1205000" />
+      <workItem from="1732499008790" duration="606000" />
+      <workItem from="1733125560030" duration="14871000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1674021571350</created>
@@ -542,14 +554,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1691392566394</updated>
-    </task>
-    <task id="LOCAL-00055" summary="upd">
-      <option name="closed" value="true" />
-      <created>1711695234303</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1711695234303</updated>
     </task>
     <task id="LOCAL-00056" summary="upd">
       <option name="closed" value="true" />
@@ -855,7 +859,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730280752166</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="upd">
+      <option name="closed" value="true" />
+      <created>1730706480041</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1730706480041</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -999,16 +1011,16 @@
     <SUITE FILE_PATH="coverage/DailyScipts$gasoline_price.coverage" NAME="gasoline_price Coverage Results" MODIFIED="1718619034113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/GasolinePrice" />
     <SUITE FILE_PATH="coverage/DailyScipts$test2__1_.coverage" NAME="test2 (1) Coverage Results" MODIFIED="1722492734471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AlpacaTest" />
     <SUITE FILE_PATH="coverage/DailyScipts$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1722240799859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/daily_script" />
-    <SUITE FILE_PATH="coverage/DailyScipts$send_message.coverage" NAME="send_message Coverage Results" MODIFIED="1730699052736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/WX_word_send_message" />
+    <SUITE FILE_PATH="coverage/DailyScipts$send_message.coverage" NAME="send_message Coverage Results" MODIFIED="1733125567012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/WX_word_send_message" />
     <SUITE FILE_PATH="coverage/DailyScipts$test.coverage" NAME="test Coverage Results" MODIFIED="1696839873760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WorkingPlanAndOthers/2022/07" />
     <SUITE FILE_PATH="coverage/DailyScipts$tets.coverage" NAME="tets Coverage Results" MODIFIED="1696846337119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$daxieyan_wenan.coverage" NAME="daxieyan_wenan Coverage Results" MODIFIED="1683597107134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/daily_script" />
     <SUITE FILE_PATH="coverage/DailyScipts$task_run.coverage" NAME="task_run Coverage Results" MODIFIED="1718679763038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow/GasolinePrice" />
     <SUITE FILE_PATH="coverage/DailyScipts$nltk_ssl_dis_downloader.coverage" NAME="nltk_ssl_dis_downloader Coverage Results" MODIFIED="1708410944127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
-    <SUITE FILE_PATH="coverage/DailyScipts$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1730258239013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/TemporaryScript" />
+    <SUITE FILE_PATH="coverage/DailyScipts$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1733219643186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/TemporaryScript" />
     <SUITE FILE_PATH="coverage/DailyScipts$ex_1.coverage" NAME="ex_1 Coverage Results" MODIFIED="1708417795065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
-    <SUITE FILE_PATH="coverage/DailyScipts$send_message_test.coverage" NAME="crontab_test Coverage Results" MODIFIED="1730706116270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/WX_word_send_message" />
-    <SUITE FILE_PATH="coverage/DailyScipts$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1697593741389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/dateutil_test" />
+    <SUITE FILE_PATH="coverage/DailyScipts$send_message_test.coverage" NAME="crontab_test Coverage Results" MODIFIED="1730706515318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/WX_word_send_message" />
+    <SUITE FILE_PATH="coverage/DailyScipts$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1733292956756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary" />
     <SUITE FILE_PATH="coverage/DailyScipts$string_conversion.coverage" NAME="string_conversion Coverage Results" MODIFIED="1698396631470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Alfred/workflow" />
     <SUITE FILE_PATH="coverage/DailyScipts$20240603.coverage" NAME="20240603 Coverage Results" MODIFIED="1717396385253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/daily_script" />
     <SUITE FILE_PATH="coverage/DailyScipts$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1723620357712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/TemporaryScript" />
@@ -1016,6 +1028,7 @@
     <SUITE FILE_PATH="coverage/DailyScipts$20230817.coverage" NAME="20230817 Coverage Results" MODIFIED="1696754198770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/daily_script" />
     <SUITE FILE_PATH="coverage/DailyScipts$book_reading.coverage" NAME="book_reading Coverage Results" MODIFIED="1685261281479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/book_reading" />
     <SUITE FILE_PATH="coverage/DailyScipts$ex_2.coverage" NAME="ex_2 Coverage Results" MODIFIED="1708418274692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP_Practice/nltk_practice" />
+    <SUITE FILE_PATH="coverage/DailyScipts$vocabulary_load_datebase.coverage" NAME="vocabulary_load_datebase Coverage Results" MODIFIED="1733294936319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/IELTS/Vocabulary" />
     <SUITE FILE_PATH="coverage/DailyScipts$impr_click_pu_uv_sql.coverage" NAME="impr_click_pu_uv_sql Coverage Results" MODIFIED="1727258339378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ZX_Work/BurialPoint/daily_scripts" />
     <SUITE FILE_PATH="coverage/DailyScipts$ProvinceCityPinyinConvert.coverage" NAME="ProvinceCityPinyinConvert Coverage Results" MODIFIED="1718672163093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest/GasolinePrice" />
     <SUITE FILE_PATH="coverage/DailyScipts$test1__2_.coverage" NAME="test1 (2) Coverage Results" MODIFIED="1723617770614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyTest" />
